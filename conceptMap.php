@@ -111,6 +111,10 @@
     
     $outfile = $_GET['fileName'];
     $flag_egift = $_GET['flag_egift']; //check whehter it's egift data or customized data
+    $conceptName = $_GET['conceptName'];
+    if(!$conceptName){
+	$conceptName = '';
+    }
 	  $list = file_get_contents($outfile);
 	  $list = preg_replace('/\r\n|\r|\n/',"\n",$list);
 	  $list_arr = explode("\n",$list);
@@ -159,15 +163,18 @@
 
 
 var data = <?php echo $json_data_string; ?>;
+window.conceptFile_name = <?php echo "'".$conceptName."'"; ?>;
+var flag_egift = <?php echo $flag_egift; ?>;
 
-
-    var xValue=0;
-    var yValue=0;
-    var zoomValue=1.0;
-    window.gui_flag = false;
-    window._data = null;
+console.log(window.conceptFile_name);
+var xValue=0;
+var yValue=0;
+var zoomValue=1.0;
+window.gui_flag = false;
+window._data = null;
+var CUSTOMEDATA = ! flag_egift;
     
-    var SymbolInInner = true;
+var SymbolInInner = true;
     renderNodes(data);
 //pass concept map name to concept_fns.js
     var concept_name = '';
@@ -261,7 +268,7 @@ var data = <?php echo $json_data_string; ?>;
                     }
                 }
             }
-	    var flag_egift = <?php echo $flag_egift; ?>;
+	    
 	    
             loadData(data,flag_egift);
         });

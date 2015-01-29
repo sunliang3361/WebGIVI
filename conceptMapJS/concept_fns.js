@@ -2,11 +2,11 @@ var SORTOUTERFLAG="OuterLength";
 var SORTINNERFLAG="Default";
 var UpExpressed="Up expressed";
 var DownExpressed="Down expressed";
-var concept_name = 'Pineal';
-var concept_name ='';
+//window.conceptFile_name = 'Pineal';
+//window.conceptFile_name ='';
 
 function loadData(data,flag_egift) {
-    console.log(data);
+    //console.log(data);
     outer = data.outer;
     if(SORTOUTERFLAG==="OuterLength")
     {
@@ -195,7 +195,8 @@ function loadData(data,flag_egift) {
 //    var ringSpacing = getStringLength(maxString);      //40chars 239
     function basicDivString(string, label) {
         var tmp = '';
-        tmp += '<div id=' + "legend_" + string + ' class="widget shadow drag" style="position: absolute; left:0px; top:400px; width: 220px; height: 160px;">';
+        tmp += '<div id=' + "legend_" + string + ' class="widget shadow drag" style="position: absolute; left:0px; ' +
+        'top:400px; width: 220px; height: 160px;">';
         tmp += '<div class="dragheader">' + label;
         tmp += '<span class="close" >X</span>';
         tmp += '</div>';
@@ -205,22 +206,26 @@ function loadData(data,flag_egift) {
         tmp += '</div>';
         return tmp;
     }
-    
+
+    if(!$('#legend_dataFile').length){
+        adddconceptFileName();
+    }
+
     //only show legend when if it's eGIFT data
     if(flag_egift){
         addInnerLegend();
         addOuterLegend();
     }
 
-    function addExpressionFile(string){
-        if(string==""||string==undefined)
+    function adddconceptFileName(){
+        if(window.conceptFile_name ==""||window.conceptFile_name ==null)
             return;
         if($('#legend_expressionFile').length){
-           $('#legend_expressionFile').remove();
+            $('#legend_expressionFile').remove();
         }
-        var vcdiv = $(basicString("expressionFile", "Expression File Name")).css({
+        var vcdiv = $(basicString("expressionFile", "File Name")).css({
             top: 10,
-            height: 60
+            height: 40
         });
 
         $('body').append(vcdiv);
@@ -230,9 +235,130 @@ function loadData(data,flag_egift) {
         parent.find(".close").click(function () {
             parent.remove();
         });
-        $('#legend_expressionFile').css({left: 0,top: 50, height:40});
-        var expressionFileSvg = d3.select('#divBody_expressionFile').append('svg').attr("top", 20).attr("width", 220).attr("height", 40).append("g")
-            .attr("transform", "translate(" + (20) + "," + (20) + ")").append('text').text(string);
+        $('#legend_expressionFile').css({left: 0,top: 50, height:60});
+        var len = 220-getStringLength("File Name")-30;
+        if(len<0)
+        {
+            len=0;
+        }
+        parent.find('.close').css({
+            left:len
+        })
+        //if(typeof string == "string")
+        //{
+        //    if (string.length > 23) {
+        //        var string = "Expression file: " + string.substr(0, 23) + "...";
+        //    }
+        //    else
+        //    {
+        //        var string = "Expression file: " + string;
+        //    }
+        //
+        //}
+        var expressionFileSvg = d3.select('#divBody_expressionFile').append('svg').attr("top", 20).attr("width", 220).attr("height", 40).append("g");
+
+        if(!(window.conceptFile_name ==""))
+        {
+            if (window.conceptFile_name.length > 23) {
+                var conceptFile_name = "Concept name: " + window.conceptFile_name.substr(0, 23) + "...";
+            }
+            else
+            {
+                var conceptFile_name = "Concept name: " + window.conceptFile_name;
+            }
+            expressionFileSvg
+                .append('text')
+                .attr("x", 5)
+                .attr("y", 20)
+                .text(conceptFile_name);
+            //expressionFileSvg
+            //    .append('text')
+            //    .attr("x", 5)
+            //    .attr("y", 40)
+            //    .text(string);
+        }
+    }
+    function addExpressionFile(string){
+        if(string==""||string==undefined)
+            return;
+        if($('#legend_expressionFile').length){
+           $('#legend_expressionFile').remove();
+        }
+        if($('#legend_dataFile').length){
+            $('#legend_dataFile').remove();
+        }
+        var vcdiv = $(basicString("dataFile", "File Name")).css({
+            top: 10,
+            height: 60
+        });
+
+        $('body').append(vcdiv);
+        $(".drag").draggable();
+
+        var parent = $('#legend_dataFile');
+        parent.find(".close").click(function () {
+            parent.remove();
+        });
+        $('#legend_dataFile').css({left: 0,top: 50, height:80});
+        var len = 220-getStringLength("File Name")-30;
+        if(len<0)
+        {
+            len=0;
+        }
+        parent.find('.close').css({
+            left:len
+        })
+        if(typeof string == "string")
+        {
+            if (string.length > 23) {
+                if(CUSTOMEDATA)
+                {
+                    var string = "Custom file: " + string.substr(0, 23) + "...";
+                }
+                else
+                {
+                    var string = "Expression file: " + string.substr(0, 23) + "...";
+                }
+
+            }
+            else
+            {
+                if(CUSTOMEDATA)
+                {
+                    var string = "Custom file: " + string;
+                }
+                else {
+                    var string = "Expression file: " + string;
+                }
+            }
+
+        }
+        var expressionFileSvg = d3.select('#divBody_dataFile').append('svg').attr("top", 20).attr("width", 220).attr("height", 60).append("g");
+
+        if(window.conceptFile_name =='')
+        {
+            expressionFileSvg.attr("transform", "translate(" + (5) + "," + (20) + ")").append('text').text(string);
+        }
+        else
+        {
+            if (window.conceptFile_name.length > 23) {
+                var conceptFile_name = "Concept name: " + window.conceptFile_name.substr(0, 23) + "...";
+            }
+            else
+            {
+                var conceptFile_name = "Concept name: " + window.conceptFile_name;
+            }
+            expressionFileSvg
+                .append('text')
+                .attr("x", 5)
+                .attr("y", 20)
+                .text(conceptFile_name);
+            expressionFileSvg
+                .append('text')
+                .attr("x", 5)
+                .attr("y", 40)
+                .text(string);
+        }
     }
 
         function addInnerLegend() {
@@ -640,7 +766,7 @@ function loadData(data,flag_egift) {
 
     var width = window.innerWidth;
     var height = window.innerHeight;
-    var zoom = d3.behavior.zoom()
+    var zoom = d3.behavior.zoom()   
         .scaleExtent([0.1, 10])
         .on("zoom", zoomed); //Yongnan
     var svg = d3.select("body").append("svg")
@@ -856,12 +982,24 @@ function loadData(data,flag_egift) {
             return "outRect" + d.id;
         })
         .attr('fill', function (d) {
-            if (d.regulation == undefined)
-                return "#f46d43";
-            else if (d.regulation == "Up")
-                return "#ffff00";
-            else if (d.regulation == "Down")
-                return "#00ff00";
+            if(CUSTOMEDATA)
+            {
+                if(d.customColor==="1")
+                {
+                    return "#ffff00";
+                }
+                else
+                    return "#f46d43";
+            }
+            else
+            {
+                if (d.regulation == undefined)
+                    return "#f46d43";
+                else if (d.regulation == "Up")
+                    return "#ffff00";
+                else if (d.regulation == "Down")
+                    return "#00ff00";
+            }
         });
 
 
@@ -875,6 +1013,18 @@ function loadData(data,flag_egift) {
         })
         .attr("transform", function (d) {
             return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)";
+        })
+        .attr("fill",function(d){
+            if(d.searched==="1")
+            {
+                return "#ff0000";
+            }
+            else if(d.searched==="undefined")
+            {
+                return "#000000";
+            }
+            else
+                return "#000000";
         })
         .text(function (d) {
             return trimLabel(d.name, 'outer');
@@ -959,12 +1109,24 @@ function loadData(data,flag_egift) {
         })
         .attr('fill', function (d) {
 //            return "#f46d43"
-            if (d.regulation == undefined)
-                return "#f46d43";
-            else if (d.regulation == "Up")
-                return "#ffff00";
-            else if (d.regulation == "Down")
-                return "#00ff00";
+            if(CUSTOMEDATA)
+            {
+                if(d.customColor==="1")
+                {
+                    return "#ffff00";
+                }
+                else
+                    return "#f46d43";
+            }
+            else
+            {
+                if (d.regulation == undefined)
+                    return "#f46d43";
+                else if (d.regulation == "Up")
+                    return "#ffff00";
+                else if (d.regulation == "Down")
+                    return "#00ff00";
+            }
         })
         .attr('pointer-events', 'all');
     inode.append("line")
@@ -983,6 +1145,18 @@ function loadData(data,flag_egift) {
         .text(function (d) {
             return trimLabel(d.name, 'inner');
         })    //d.name change to two lines or only show the fixed width of string and show all when hover
+        .attr("fill",function(d){
+            if(d.searched==="1")
+            {
+                return "#ff0000";
+            }
+            else if(d.searched==="undefined")
+            {
+                return "#000000";
+            }
+            else
+                return "#000000";
+        })
         .each(function (d) {
             d.bx = this.getBBox().x;
             d.by = this.getBBox().y;
@@ -1045,11 +1219,17 @@ function loadData(data,flag_egift) {
         this.loadFile = function () {
             $('#myInput').click();
         };
+        this.chooseColorFile = function () {
+            $('#myInput').click();
+        };
         this.upExpressed = UpExpressed;
         this.downExpressed = DownExpressed;
 
-        this.colorNodeSample = function(){
-            window.open('sampleData/symbolRegulation.txt','_blank');
+        this.colorNodeSample= function(){
+            window.open('symbolRegulation.txt','_blank');
+        };
+        this.colorFileSample= function(){
+            window.open('colorSample.txt','_blank');
         };
         this.load = function () {
 	     if(UpExpressed==""||DownExpressed=="")
@@ -1107,13 +1287,71 @@ function loadData(data,flag_egift) {
                         $(".tooltip").remove();
                         $(".main").remove();
 
-			   addExpressionFile(selected_file.name);
+			            addExpressionFile(selected_file.name);
                         loadData(data,flag_egift);
                     }
                 };
             }
         };
+        this.loadColor = function (){
+            var selected_colorfile = $('#myInput').get(0).files[0];
+            if (selected_colorfile === undefined /*&& selectValue === null*/) {
+                alert("Please select data file!");
+            }
+            else if (selected_colorfile !== undefined /*&& selectValue === null*/) {
+                var reader = new FileReader();
+                reader.readAsText(selected_colorfile, "UTF-8");
+                reader.onerror = function () {
+                };
+                reader.onprogress = function (event) {
+                };
+
+                reader.onload = function () {
+                    var tempdata = "";
+                    tempdata = reader.result;
+                    if (tempdata != null) {
+                        tempdata = tempdata.replace(/\r\n/g, '\n');
+                        tempdata = tempdata.replace(/\r/g, '\n');
+                        var symbolRegulation = tempdata.split("\n");
+                        if (symbolRegulation[0].indexOf("state") == -1 || symbolRegulation.length < 2) {
+                            alert("Color file is a tab-delimited format whose first line begins with name and state.");
+                            return;
+                        }
+                        var symbolRegulations = {};
+                        symbolRegulations.symbols = [];
+                        symbolRegulations.customColor = [];
+                        for (var i = 1; i < symbolRegulation.length; ++i) {
+                            if (symbolRegulation[i] == "")
+                                continue;
+                            var tmps = symbolRegulation[i].split("\t");
+                            symbolRegulations.symbols.push(tmps[0]);
+                            symbolRegulations.customColor.push(tmps[1]);
+                        }
+                        for (var i = 0; i < data.inner.length; ++i) {
+                            var index = symbolRegulations.symbols.indexOf(data.inner[i].name);
+                            if (index > -1) {
+                                data.inner[i].customColor = symbolRegulations.customColor[index];
+                            }
+                        }
+                        for (var i = 0; i < data.outer.length; ++i) {
+                            var index = symbolRegulations.symbols.indexOf(data.outer[i].name);
+                            if (index > -1) {
+                                data.outer[i].customColor = symbolRegulations.customColor[index];
+                            }
+                        }
+                        d3.select("#svgID").remove();   //=================================================================================================================================
+                        $("#menuID").remove();
+                        $(".tooltip").remove();
+                        $(".main").remove();
+
+                        addExpressionFile(selected_colorfile.name);
+                        loadData(data,flag_egift);
+                    }
+                };
+            }
+        }
         this.switchNode = function () {
+
             var newData = [];
             for (var i = 0; i < data.outer.length; ++i) {
                 var tmpData = [];
@@ -1140,11 +1378,31 @@ function loadData(data,flag_egift) {
 
             addInnerLegend();
         };
+        this.inputSearchName = "";
+        this.searchNode = function(){
+            if(_this.inputSearchName === "")
+                return;
+            for (var i = 0; i < data.inner.length; ++i) {
+                if (_this.inputSearchName === data.inner[i].name) {
+                    data.inner[i].searched = "1";
+                }
+            }
+            for (var i = 0; i < data.outer.length; ++i) {
+                if (_this.inputSearchName === data.outer[i].name) {
+                    data.outer[i].searched = "1";
+                }
+            }
+            d3.select("#svgID").remove();   //=================================================================================================================================
+            $("#menuID").remove();
+            $(".tooltip").remove();
+            $(".main").remove();
+            loadData(data ,flag_egift);
+        };
         this.outerLegend = function () {
 
             addOuterLegend();
         };
-        this.innersmallerLength = "5";
+        this.innersmallerLength = "200";
         this.innergreaterLength = "0";
         var _this = this;
         this.innerCutoff = function () {
@@ -1205,7 +1463,7 @@ function loadData(data,flag_egift) {
 
             loadData(cutoffObj,flag_egift);
         };
-        this.outersmallerLength = "5";
+        this.outersmallerLength = "200";
         this.outergreaterLength = "0";
         this.outerCutoff = function () {
             var smallLength = parseInt(_this.outersmallerLength);
@@ -1311,25 +1569,35 @@ function loadData(data,flag_egift) {
 
     var gui = new dat.GUI({ width: 360 });
     gui.add(text, 'switchNode').name('Switch');
-    
+    var searchNode = gui.addFolder('Search Node');
+    searchNode.add(text, 'inputSearchName').name('Input Name');
+    searchNode.add(text, 'searchNode').name('Search');
     if(flag_egift){
         var legend = gui.addFolder('Legend');
         legend.add(text, 'innerLegend').name('Show Inner Legend');
         legend.add(text, 'outerLegend').name('Show Outer Legend');
     }
-    
+    if(!CUSTOMEDATA) {
         var loadFile = gui.addFolder('Load Expression File');
-    var upExpressedControl = loadFile.add(text, 'upExpressed').name('Name Up Gene');
-    upExpressedControl.onChange(function(value) {
-        UpExpressed=value;
-    });
-    var downExpressedControl = loadFile.add(text, 'downExpressed').name('Name Down Gene');
-    downExpressedControl.onChange(function(value) {
-        DownExpressed=value;
-    });
-    loadFile.add(text, 'loadFile').name('Choose Data File');
-    loadFile.add(text,'colorNodeSample').name('Sample Data')
-    loadFile.add(text, 'load').name('Load');
+        var upExpressedControl = loadFile.add(text, 'upExpressed').name('Name Up Gene');
+        upExpressedControl.onChange(function (value) {
+            UpExpressed = value;
+        });
+        var downExpressedControl = loadFile.add(text, 'downExpressed').name('Name Down Gene');
+        downExpressedControl.onChange(function (value) {
+            DownExpressed = value;
+        });
+        loadFile.add(text, 'loadFile').name('Choose Data File');
+        loadFile.add(text, 'colorNodeSample').name('Sample Data')
+        loadFile.add(text, 'load').name('Load');
+    }
+    else
+    {
+        var loadColorFile = gui.addFolder('Load Color File');
+        loadColorFile.add(text, 'chooseColorFile').name('Choose Data File');
+        loadColorFile.add(text, 'colorFileSample').name('Sample Data')
+        loadColorFile.add(text, 'loadColor').name('Load');
+    }
     var sortOuterControl = gui.add(text, 'sortOuterData', [ 'OuterLength', 'OuterFrequency', 'OuterRateLimited' ] ).name('sortOuterData').listen();
     var sortInnerControl = gui.add(text, 'sortInnerData', [ 'Default','InnerLength', 'InnerFrequency', 'InnerRateLimited' ] ).name('sortInnerData').listen();
     sortOuterControl.onChange(function(value) {
@@ -1360,13 +1628,13 @@ function loadData(data,flag_egift) {
 
     var cutoffLength = gui.addFolder('Filter');
     var innercutoffLength = cutoffLength.addFolder('Inner Data Filter');
-    innercutoffLength.add(text, 'innersmallerLength').name("Edge number <");
-    innercutoffLength.add(text, 'innergreaterLength').name("Edge number >");
+    innercutoffLength.add(text, 'innersmallerLength').name("Edge number <="); ////////////?????????????????????????????????????????????????????????????????????????change
+    innercutoffLength.add(text, 'innergreaterLength').name("Edge number >=");////////////?????????????????????????????????????????????????????????????????????????change
     innercutoffLength.add(text, 'innerCutoff').name('GO');
 
     var outercutoffLength = cutoffLength.addFolder('Outer Data Filter');
-    outercutoffLength.add(text, 'outersmallerLength').name("Edge number <");
-    outercutoffLength.add(text, 'outergreaterLength').name("Edge number >");
+    outercutoffLength.add(text, 'outersmallerLength').name("Edge number <=");////////////?????????????????????????????????????????????????????????????????????????change
+    outercutoffLength.add(text, 'outergreaterLength').name("Edge number >=");////////////?????????????????????????????????????????????????????????????????????????change
     outercutoffLength.add(text, 'outerCutoff').name('GO');
 //remove highlighted nodes and edges
 //document.body.addEventListener("click", function() {
@@ -1532,12 +1800,38 @@ function loadData(data,flag_egift) {
             });
             d.clickFlag = !d.clickFlag;
             if (d.id.indexOf('i') > -1) {
-                subsetObj.inner.push(d);  //here we need to remove the node.x  and node.y
+                ////////////?????????????????????????????????????????????????????????????????????????change////////////?????????????????????????????????????????????????????????????????????????change
+                //console.log('selectedObj');
+                //console.log(selectedObj);
+                //console.log(selectedObj.related_nodes.length);
+                var existInInner = false;    
+                //here we use subsetObj to check whether inner node was selected already (different from the checking method when we need to push outer or inner node to subsetObj)
+                for(var i = 0; i < subsetObj.inner.length; i++){
+                    if (subsetObj.inner[i].id == d.id){
+                        existInInner = true;
+                    }
+                }
+                
+                if (!existInInner){
+                    subsetObj.inner.push(d);  
+                }
+                
                 flag_node_type = 1;
+                // if it's not in subset 
             }
             else {
-                subsetObj.outer.push(d);
+                var existInOuter = false;
+                for (var i = 0; i < subsetObj.outer.length; i++){
+                    if (subsetObj.outer[i].id == d.id){
+                        existInOuter = true;
+                    }
+                }
+                if(!existInOuter){
+                    subsetObj.outer.push(d);
+                }
+
                 flag_node_type = 0;
+                ////////////?????????????????????????????????????????????????????????????????????????change////////////?????????????????????????????????????????????????????????????????????????change
             }
 
             if (flag_node_type) {// inner node clicked, related nodes are outer nodes

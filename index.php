@@ -33,7 +33,7 @@
       //echo recaptcha_get_html($publickey);
     ?>
     </br></br>
-    <span>Name Your input List (optional) <input name='input_name' type='txt'></span>
+    <span>Name Your input List (optional) <input name='conceptName' type='txt'></span>
     </br>
     <input type="submit" name="box_submit" value="Submit">
   </form>	

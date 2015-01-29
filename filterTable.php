@@ -5,7 +5,7 @@ display_header();
 ?>
 
 <script>
-function loadTable(fileName,flag_egift){
+function loadTable(fileName,flag_egift,conceptName){
     var currentData;
     var tooltip;
     var rowLength = 4;
@@ -14,8 +14,9 @@ function loadTable(fileName,flag_egift){
     
     geneItems = geneItems.replace(/\r\n/g, '\n');
     geneItems = geneItems.replace(/\r/g, '\n');
+    //console.log(geneItems);
     if(geneItems.indexOf('\t')==-1){
-        alert('Warning error,please input tab delimited data!');
+        alert('Warning, please data format is wrong, if not, please contact us!');
         location.href = "index.php";
         return;
     }
@@ -36,7 +37,11 @@ function loadTable(fileName,flag_egift){
         location.href = "index.php";
         return;
     }
+
+    
     currentData = partData(geneItemData); //0 genes 1 items
+    
+    
     tooltip = d3.select("body")
         .append("div")
         .attr("class", "tooltip")
@@ -111,6 +116,70 @@ function loadTable(fileName,flag_egift){
             refreshTable(Data);
         
         });
+        
+        // sort based on alphebetical or frequency.
+        $('#sortTable').change(function(){
+            if(this.value=='freq'){
+                //console.log('click freq');
+                //sort Data based on freq
+                sortObjByFreq(Data);
+                refreshTable(Data);
+                
+            }
+            else{
+                //console.log('click alpha');
+                //sort based on alphabetical order of iTerms
+                sortObjByAlpha(Data);
+                refreshTable(Data);
+            }
+            
+        });
+        
+        function sortObjByFreq(Data) {
+            var swapped;
+            do {
+                swapped = false;
+                for (var i = 0; i < Data.length - 1; ++i) {
+                        if (Data[i].sum > Data[i + 1].sum) {
+                        var tmp = Data[i];
+                        Data[i] = Data[i + 1];
+                        Data[i + 1] = tmp;
+                        swapped = true;
+                    }
+                    }
+            } while (swapped)
+        }
+        function sortObjByAlpha(Data) {
+            var swapped;
+            do {
+                swapped = false;
+                for (var i = 0; i < Data.length - 1; ++i) {
+                        if (Data[i].keys > Data[i + 1].keys) {
+                        var tmp = Data[i];
+                        Data[i] = Data[i + 1];
+                        Data[i + 1] = tmp;
+                        swapped = true;
+                    }
+                    }
+            } while (swapped)
+        }
+        
+        //highlight all iterms with the frequency users defined
+        //$("#input_freq").on("keypress", function(){
+        //    //highlight the cells
+        //    var keycode = (event.keyCode ? event.keyCode : event.which);
+        //    if(keycode == '13'){
+        //        alert ("I am here");   
+        //    }
+        //    d3.selectAll('.checkBox')[0].forEach(function(d, i) {
+        //        console.log('d');
+        //        console.log(d);
+        //    });
+        //    
+        //        //d3.select(this).attr("class","highlight");
+        //        //d3.select("#"+d3.select(this).datum().id).property('checked', true);
+        //
+        //});
     
         //make sure data is rewrite successfully, and then we can use visualize the data
         $("#view").click(function(){
@@ -121,7 +190,7 @@ function loadTable(fileName,flag_egift){
             });
         $('#conceptMap').click(function(){
   
-            window.open('conceptMap.php?fileName='+fileName+'&flag_egift='+flag_egift,'_blank');
+            window.open('conceptMap.php?fileName='+fileName+'&flag_egift='+flag_egift+'&conceptName='+conceptName,'_blank');
             
         });
         $('#download').click(function(){
@@ -131,14 +200,14 @@ function loadTable(fileName,flag_egift){
         
         var margin = {top: 20, right: 10, bottom: 30, left: 10},
         width = 800 - margin.left - margin.right,
-        height = 600 - margin.top - margin.bottom;
+        height = 200 - margin.top - margin.bottom;
         if(d3.select('#d3table').select('table'))
         {
             d3.select('#d3table').select('table').remove();
         }
-        var table = d3.select('#d3table').append("table");
+        var table = d3.select('#d3table').append("table")
             //.attr("width", width + margin.left + margin.right);
-            //.attr("height", height + margin.top + margin.bottom);
+            .attr("height", height + margin.top + margin.bottom);
         table.append("tbody");
         var matrix = [];
         var currentData = clone(Data);
@@ -224,7 +293,7 @@ function loadTable(fileName,flag_egift){
                 .attr("width",
                     function(d) {
                         if(d.sum!==undefined)
-                            return d.sum /maxCount * 80;
+                            return d.sum /maxCount * 80;    //??????????????????why 80??????????
                         else
                             return 0;
                     });
@@ -274,16 +343,11 @@ function loadTable(fileName,flag_egift){
         cellDiv.attr("class","Bcell")
                 .append("span")
                 .text(function(d) {return d.keys;});
-        
-        
-        
-
-        
+           
     }
     
     function partData(data){
-        //console.log('data');
-        //console.log(data);
+        
     var sData={}; //0 genes 1 items
     var genes=[];
     var items=[];
@@ -298,6 +362,7 @@ function loadTable(fileName,flag_egift){
                 return d;
             return d;})).values().sort(function(a,b){ return ( a<b? -1 : a>b ? 1 : 0);})
         ];
+
     //initialize the relationship
     //*************************************how to understand?????????????????????????????????????
     sData.data = [
@@ -307,8 +372,7 @@ function loadTable(fileName,flag_egift){
         }),
         sData.keys[1].map( function(d){ return sData.keys[0].map( function(v){ return 0; }); })
         ];
-    //console.log('sData');
-    //console.log(sData);
+
     
     for(var i=0; i<data.genes.length; ++i)
     {
@@ -343,11 +407,6 @@ function loadTable(fileName,flag_egift){
 <?php
 if(isset($_POST["box_submit"])&&isset($_POST["type"])){
       $type=$_POST["type"];
-      if (isset($_POST["input_name"])){
-        $inputName = $_POST["input_name"];
-      }else{
-        $inputName = false;
-      }
       //echo "<b>You can view gene iterm in graph by the following method!\n</b>";
       //echo "</br></br>";
       $list = $_POST['txt_query'];
@@ -358,7 +417,14 @@ if(isset($_POST["box_submit"])&&isset($_POST["type"])){
         echo "Your ID list is empty! Please give me your ID!</br>";
         die();
       }
-      else{    
+      else{
+        // pass the user defined concept name to the concept map
+        if (isset($_POST["conceptName"])){
+            $conceptName = $_POST["conceptName"];
+        }else{
+            $conceptName = false;
+        }
+        // 
         $date=new DateTime();
         $d=$date->getTimestamp();
         $ran=rand(1,50);
@@ -376,15 +442,23 @@ if(isset($_POST["box_submit"])&&isset($_POST["type"])){
         echo "<div>Suggestion: if your filtered data is larger than 1000 lines, please use concept map to visuallize!</div></br>";
         echo '<div id="wait"><!-- loading animation --></div>';
         echo "<div>";
-        echo "<div id='d3table'></div>";
-        echo "</br>";
+        echo "Sort: <select id='sortTable'><option value='alph'>alphabetical</option><option value='freq'>frequency</option></select> &nbsp;&nbsp;";
+        //echo "Frequency >= <input name='input_freq' type='txt' size=8 > &nbsp;&nbsp;";
+        echo "</br></br>";
         echo "<button id='delete'>Delete</button> &nbsp;";
         echo "<button id='view'>View</button> &nbsp;";
         echo "<button id='download'>Download</button> &nbsp;";
         echo "<button id='conceptMap'>Concept_Map View</button>&nbsp;";
+        
         if($type == 'entrez'||$type == 'gene-iterm'){
             echo "<button id='cytoscape'>Cytoscape View</button> &nbsp;";
         }
+        echo "</br></br>";
+        echo '<div style="height: 700px; width: 1250px; overflow: scroll;">';
+
+        echo "<div id='d3table'></div>";
+
+        echo '</div>';
         
         echo "</div>";
         echo "</br></br></br>";
@@ -405,7 +479,7 @@ if(isset($_POST["box_submit"])&&isset($_POST["type"])){
     //This is password for you.
     	$password="AnalysisForLiang";
     	//$gene="650,651,652";
-    	$result = file_get_contents("https://biotm.cis.udel.edu/udelafc/getGeneAnalysisResults.php?user=$username&pass=$password&entrezids=$gene");
+    	$result = file_get_contents("http://biotm.cis.udel.edu/udelafc/getGeneAnalysisResults.php?user=$username&pass=$password&entrezids=$gene");
 
         
         $fh=fopen($filename,'w') or die ("cannot open this file");
@@ -421,7 +495,8 @@ if(isset($_POST["box_submit"])&&isset($_POST["type"])){
 
 	<script>
 	  var fileName = <?php echo "'".$outfile."'"; ?>;
-	  loadTable(fileName,true);
+          var conceptName = <?php echo "'".$conceptName."'"; ?>;
+	  loadTable(fileName,true,conceptName);
           
 	</script>
 <?php
@@ -438,7 +513,8 @@ if(isset($_POST["box_submit"])&&isset($_POST["type"])){
 ?>
         <script>
 	  var fileName = <?php echo "'".$outfile."'"; ?>;
-	  loadTable(fileName,true);
+          var conceptName = <?php echo "'".$conceptName."'"; ?>;
+	  loadTable(fileName,true,conceptName);
           
 	</script>
 <?php
@@ -451,7 +527,8 @@ if(isset($_POST["box_submit"])&&isset($_POST["type"])){
 ?>
         <script>
 	  var fileName = <?php echo "'".$outfile."'"; ?>;
-	  loadTable(fileName,false);
+          var conceptName = <?php echo "'".$conceptName."'"; ?>;
+	  loadTable(fileName,false,conceptName);
           
 	</script>
 <?php            
