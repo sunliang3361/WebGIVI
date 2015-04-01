@@ -1,0 +1,1 @@
+symbol	regulationHK1	UpSDK1	DownTFAM	UpADD3	DownMUSK	Up

@@ -1,0 +1,6 @@
+name	state
+TPP1	1
+MLC1	1
+PAK7	1
+MED6	1
+NR2E3	1
