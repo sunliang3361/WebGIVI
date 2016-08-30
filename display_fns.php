@@ -3,7 +3,7 @@ function display_header(){
   ?>
 <html>
 <head>
-  <title>webGIVI tool</title>
+  <title>webGIVI tool - dev version</title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
@@ -12,6 +12,7 @@ function display_header(){
   <script>
     $(function() {
       $( "#menu" ).menu();
+      $( "#tabs" ).tabs();
       //    $body = $("body");
       //
       //$(document).on({
@@ -21,13 +22,14 @@ function display_header(){
   });  
   </script>
 
+
   
   
 </head>
 <body>
 
 <div id="header">
-  <div id="logo">webGIVI<span id="logo-part"><sup> tool</sup></span></div>
+  <div id="logo">webGIVI<span id="logo-part"><sup> tool</sup> (development version)</span></div>
   <div id="logo-text">
     <div id="logo-title">Visualization of Gene and iTerm</div>
   </div>
@@ -36,7 +38,7 @@ function display_header(){
 <div id="menu">
   <div><a href="index.php">Home</a></div>
   <div><a href="http://biotm.cis.udel.edu/eGIFT/">eGIFT</a></div>
-  <div><a href="webGIVI_Tutorial.pdf" target='_blank'>Tutorial</a></div>
+  <div><a href="tutorial.php">Tutorial</a></div>
   <div><a href="contact.php">Contact</a></div>
 </div>
 
@@ -53,6 +55,14 @@ function display_footer(){
 <?php
 }
 
+
+  // Sanitize data
+  function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
 
 ?>
 

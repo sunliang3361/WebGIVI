@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!--modified from Jam Cellar 2014-05-06-->
+<!--Part of code modified from Jam Cellar 2014-05-06-->
+<!--Navigation panel on the concept map is from reactome-->
 <head>
 	<meta charset="utf-8">
 	<meta name="name" content="Concept Map" />
@@ -102,19 +103,33 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script type="text/javascript" src="jsLib/dat.gui.js"></script>
 <link rel="stylesheet" href="css-ui/dat_gui.css">
-<script src="conceptMapJS/concept_fns.js"></script>
+<script src="conceptMapJS/concept_fns.js?version=5"></script>
 
 
 <?php
     //$jsonFile = $_GET['fileName'];
     //$jsonData = file_get_contents($jsonFile);
+    require_once('display_fns.php');
+    if(preg_match("/[A-Za-z0-9\_]+/", $_GET['fileName']) == TRUE){
+      $outfile = 'data/'.test_input($_GET['fileName']).'.txt';
+    }else{
+      exit();
+    }
+    if(preg_match("/[A-Za-z0-9\_]+/", $_GET['flag_egift']) == TRUE){
+      $flag_egift = test_input($_GET['flag_egift']);
+    }else{
+	exit();
+    }
     
-    $outfile = $_GET['fileName'];
-    $flag_egift = $_GET['flag_egift']; //check whehter it's egift data or customized data
-    $conceptName = $_GET['conceptName'];
-    if(!$conceptName){
+    if(!$_GET['conceptName']){
 	$conceptName = '';
     }
+    else{
+	$conceptName = $_GET['conceptName'];
+    }
+    //$flag_egift = $_GET['flag_egift']; //check whehter it's egift data or customized data
+    //$conceptName = $_GET['conceptName'];
+
 	  $list = file_get_contents($outfile);
 	  $list = preg_replace('/\r\n|\r|\n/',"\n",$list);
 	  $list_arr = explode("\n",$list);

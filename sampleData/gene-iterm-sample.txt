@@ -1,67 +1,1 @@
-PCSK7	Centrosome
-RAD21	Centrosome
-RCC2	Centrosome
-ASPM	Centrosome
-CDC14B	Centrosome
-CDK5RAP2	Centrosome
-KIF11	Centrosome
-ORC2L	Centrosome
-PCNT	Centrosome
-PLK1	Centrosome
-TACC3	Centrosome
-CDC14B	DNA repair
-CHAF1B	DNA repair
-ERCC3	DNA repair
-FANCI	DNA repair
-RAD17	DNA repair
-RAD50	DNA repair
-TDG	DNA repair
-TDP1	DNA repair
-UIMC1	DNA repair
-CHAF1B	DNA replication
-DBF4B	DNA replication
-ORC2L	DNA replication
-PIF1	DNA replication
-RAD17	DNA replication
-RAD21	DNA replication
-RASGRF1	DNA replication
-TDP1	DNA replication
-TECR	DNA replication
-UHRF1	DNA replication
-CHAF1B	Double-strand breaks
-PPP6C	Double-strand breaks
-RAD17	Double-strand breaks
-RAD50	Double-strand breaks
-TDP1	Double-strand breaks
-UIMC1	Double-strand breaks
-RAD51AP1	Double-strand breaks
-TDG	Double-strand breaks
-RAD17	Ionizing radiation
-RAD50	Ionizing radiation
-TLK1	Ionizing radiation
-UIMC1	Ionizing radiation
-ASPM	Spindle
-CDC14B	Spindle
-CDC20	Spindle
-CLIP1	Spindle
-DBF4B	Spindle
-EML1	Spindle
-EWSR1	Spindle
-KIF11	Spindle
-KIF4A	Spindle
-PCNT	Spindle
-PLK1	Spindle
-RAD21	Spindle
-RCC2	Spindle
-TLK1	Spindle
-TUBA3E	Spindle
-MCF2	Telomeres
-RAD17	Telomeres
-RAD50	Telomeres
-TNKS	Telomeres
-CPSF3	UV
-DBF4B	UV
-ERCC3	UV
-HNRPDL	UV
-MAP2K4	UV
-RAD17	UV
+PCSK7	CentrosomeRAD21	CentrosomeRCC2	CentrosomeASPM	CentrosomeCDC14B	CentrosomeCDK5RAP2	CentrosomeKIF11	CentrosomeORC2L	CentrosomePCNT	CentrosomePLK1	CentrosomeTACC3	CentrosomeCDC14B	DNA repairCHAF1B	DNA repairERCC3	DNA repairFANCI	DNA repairRAD17	DNA repairRAD50	DNA repairTDG	DNA repairTDP1	DNA repairUIMC1	DNA repairCHAF1B	DNA replicationDBF4B	DNA replicationORC2L	DNA replicationPIF1	DNA replicationRAD17	DNA replicationRAD21	DNA replicationRASGRF1	DNA replicationTDP1	DNA replicationTECR	DNA replicationUHRF1	DNA replicationCHAF1B	Double-strand breaksPPP6C	Double-strand breaksRAD17	Double-strand breaksRAD50	Double-strand breaksTDP1	Double-strand breaksUIMC1	Double-strand breaksRAD51AP1	Double-strand breaksTDG	Double-strand breaksRAD17	Ionizing radiationRAD50	Ionizing radiationTLK1	Ionizing radiationUIMC1	Ionizing radiationASPM	SpindleCDC14B	SpindleCDC20	SpindleCLIP1	SpindleDBF4B	SpindleEML1	SpindleEWSR1	SpindleKIF11	SpindleKIF4A	SpindlePCNT	SpindlePLK1	SpindleRAD21	SpindleRCC2	SpindleTLK1	SpindleTUBA3E	SpindleMCF2	TelomeresRAD17	TelomeresRAD50	TelomeresTNKS	TelomeresCPSF3	UVDBF4B	UVERCC3	UVHNRPDL	UVMAP2K4	UVRAD17	UVAANAT	retinAANAT	vertebrateAANAT	constantAANAT	organAANAT	chickAANAT	cyclAANAT	mrnaAANAT	synthesis
