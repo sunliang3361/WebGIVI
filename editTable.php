@@ -5,7 +5,7 @@ display_header();
 //$fileName = $_GET['fileName'];
 ?>
 
-<script src="js/editTable.js?version=2"></script>
+<script src="js/editTable.js?version=3"></script>
 
 <?php
       $type=$_SESSION["type"];
@@ -49,10 +49,15 @@ display_header();
             $list = `python convertIDs.py -c u2e -i "$list" `;
         }
         else if($type=='genesymbol'){
-            $im_list=explode('\n', $list);
+            $list = preg_replace('/\r\n|\r|\n/',"\n",$list);
+            $im_list=explode("\n", $list);
             $input_string='';
-            foreach ($im_list as $item){ $input_string.=$item." "; }          
-            $list = `python GeneName2Entrez.py "$input_string" `;
+            foreach ($im_list as $item){ $input_string.=$item.","; } 
+            $input_string=rtrim($input_string,',');
+            $username="liang"; 
+            $password="EntrezForLiang";
+            $list = file_get_contents("https://biotm.cis.udel.edu/udelafc/getEntrezFromGene.php?user=$username&pass=$password&symbols=$input_string");     
+
         }
      // }
 
@@ -126,6 +131,7 @@ display_header();
             //This is password for you.
             $password="AnalysisForLiang";
             //$gene="650,651,652";
+
             $result = file_get_contents("https://biotm.cis.udel.edu/udelafc/getGeneAnalysisResults.php?user=$username&pass=$password&entrezids=$gene");
 
             $fh=fopen($filename,'w') or die ("cannot open this file");

@@ -1,0 +1,192 @@
+HK1	oxide phosphoryl
+UCP3	oxide phosphoryl
+TFAM	oxide phosphoryl
+FZD10	wnt pathway
+FZD9	wnt pathway
+FZD4	wnt pathway
+FZD10	imply
+FZD9	imply
+TBX22	imply
+KIAA1274	imply
+ODZ2	imply
+FZD10	lrp5
+FZD4	lrp5
+FZD4	wnt sign
+FZD9	wnt sign
+FZD10	wnt sign
+TFAM	respiratory
+UCP3	respiratory
+MUSK	respiratory
+FZD4	wnt ligand
+FZD10	wnt ligand
+AANAT	retin
+FZD4	retin
+FZD10	cysteine-rich domain
+FZD4	cysteine-rich domain
+FZD4	wnts
+FZD10	wnts
+UCP3	respiration
+TFAM	respiration
+FZD4	canonic wnt
+FZD10	canonic wnt
+UCP3	energy metabolism
+HK1	energy metabolism
+TFAM	muscle
+UCP3	muscle
+HK1	muscle
+MUSK	muscle
+FZD10	cell polar
+FZD4	cell polar
+TFAM	peroxisome proliferator-activated
+UCP3	peroxisome proliferator-activated
+TBX22	origin
+FZD9	origin
+FZD10	wnt
+FZD4	wnt
+MUSK	ocular
+FZD4	ocular
+TBX22	facial
+MUSK	facial
+UCP3	skeletal muscle
+HK1	skeletal muscle
+TFAM	skeletal muscle
+TBX22	exon
+FZD4	exon
+FZD10	exon
+TBX22	ortholog
+FZD10	ortholog
+TBX22	vertebrate
+FZD10	vertebrate
+AANAT	vertebrate
+TFAM	oxid
+HK1	oxid
+UCP3	oxid
+FZD10	transmembrane protein
+ODZ2	transmembrane protein
+TFAM	atp
+HK1	atp
+UCP3	atp
+HK1	glycolysis
+UCP3	glycolysis
+AANAT	constant
+HK1	constant
+UCP3	mitochondrium membrane
+HK1	mitochondrium membrane
+AANAT	organ
+FZD10	organ
+TFAM	mitochondria
+HK1	mitochondria
+UCP3	mitochondria
+TFAM	ros
+UCP3	ros
+AANAT	chick
+FZD10	chick
+AANAT	cycl
+PDIA3	cycl
+FZD10	beta-catenin
+FZD9	beta-catenin
+TBX22	spectrum
+FZD4	spectrum
+ODZ2	form
+TBX22	form
+MUSK	form
+PDIA3	form
+TBX22	embryogenesis
+FZD10	embryogenesis
+TFAM	skeletal
+UCP3	skeletal
+TFAM	mitochondrium
+HK1	mitochondrium
+UCP3	mitochondrium
+TBX22	fetu
+FZD10	fetu
+ADD3	junction
+MUSK	junction
+TBX22	perform
+FZD4	perform
+ADD3	membran
+PDIA3	membran
+MUSK	membran
+HK1	membran
+UCP3	membran
+TBX22	inherit
+FZD4	inherit
+TBX22	phenotyp
+FZD4	phenotyp
+TBX22	missense mutat
+FZD4	missense mutat
+HK1	insulin
+UCP3	insulin
+TBX22	mrna express
+UCP3	mrna express
+HK1	transport
+UCP3	transport
+ADD3	transport
+FZD10	neur
+MUSK	neur
+FZD10	chromosome
+FZD9	chromosome
+FZD4	chromosome
+UCP3	metabolic
+HK1	metabolic
+FZD4	fold
+PDIA3	fold
+MUSK	synapse
+FZD9	cell surface
+FZD10	cell surface
+FZD4	novel
+FZD9	novel
+ADRA1B	novel
+ODZ2	novel
+MUSK	sever
+FZD4	sever
+TFAM	impair
+FZD4	impair
+PDIA3	receptor
+FZD4	receptor
+ODZ2	receptor
+FZD10	nerve system
+ODZ2	nerve system
+FZD9	embryo
+FZD10	embryo
+TBX22	embryo
+MUSK	antibody
+PDIA3	antibody
+FZD10	characterize
+FZD9	characterize
+FZD9	acid
+FZD10	acid
+HK1	acid
+PDIA3	acid
+UCP3	acid
+UCP3	metabolism
+HK1	metabolism
+TFAM	rna
+RECQL5	rna
+FZD10	sign pathway
+FZD4	sign pathway
+AANAT	synthesis
+PDIA3	synthesis
+TFAM	nuclear
+PDIA3	nuclear
+PDIA3	kinase
+ADD3	kinase
+RECQL5	transcript
+TBX22	transcript
+ODZ2	transcript
+FZD4	defect
+TBX22	defect
+ADD3	phosphoryl
+HK1	phosphoryl
+FZD9	proliferate
+FZD10	proliferate
+FZD9	differentiate
+FZD10	differentiate
+ODZ2	sequent
+FZD4	sequent
+PDIA3	catalyze
+HK1	catalyze
+FZD9	reveal
+ODZ2	reveal
+ODZ2	tissue
+UCP3	tissue
