@@ -3297,3 +3297,293 @@ MYO1G	a-150/-94
 THEMIS	a-150/-94
 TNIP1	a20
 TNIP3	a20
+#TIME:2016-03-18 07:02:46
+HSPB1	27-kda
+HSPB2	27-kda
+MYOM2	a surface defined
+PRKAB2	a surface defined
+EPDR1	a's crucial
+FHOD1	a's crucial
+FHOD1	a*0501
+GRHL2	a*0501
+FHOD1	a*1101-b*1502-drb1*1202
+SVOP	a*1101-b*1502-drb1*1202
+ODF2L	a*110101
+PHKA1	a*110101
+ALPK2	a*2602
+PTPLA	a*2602
+HOXA3	a*3303
+PYGB	a*3303
+ATP1B4	a+ b-
+FAM65B	a+ b-
+DMN	a+ tail
+MYO16	a+ tail
+MYO16	a+b+ toxigenic
+SH3BGR	a+b+ toxigenic
+SLC30A10	a-/pre-lamin a-containing
+VGLL3	a-/pre-lamin a-containing
+FSD2	a-10 vascular
+SLC30A10	a-10 vascular
+ANKRD33	a-1064g
+PHKA1	a-1064g
+FHOD1	a-116 cat/egr-1
+HOXA3	a-116 cat/egr-1
+ABHD6	a-1235 cell
+PTPRQ	a-1235 cell
+EGFL6	a-1438a
+FANCB	a-1438a
+PHKB	a-1572g
+PRPS2	a-1572g
+FHOD1	a-1590 npr-a
+HHATL	a-1590 npr-a
+#TIME:2016-03-18 07:03:29
+AK1	some cell
+LMNB2	some cell
+MYL1	some cell
+NPM3	some cell
+#TIME:2016-03-18 07:03:49
+DPEP1	prob
+FMO4	prob
+PGAM1	prob
+PHKA1	prob
+PYGB	prob
+#TIME:2016-03-20 20:08:50
+AKAP5	150-kda
+SEMA4D	150-kda
+MYL9	20-kda
+MYLK3	20-kda
+TCERG1L	a*0201-restricted
+TCF15	a*0201-restricted
+FAM83B	a- and/or
+UPF3A	a- and/or
+FAM83B	a- isoelectric
+RERG	a- isoelectric
+FZD6	a--when
+MAP3K13	a--when
+FHOD3	a-161t polymorphisms
+MYH3	a-161t polymorphisms
+GPR126	a-206/g-206
+NEXN	a-206/g-206
+MYBPC3	a-band
+OBSCN	a-band
+TTN	a-band
+#TIME:2016-03-25 12:24:25
+LMO2	11p13
+PAX6	11p13
+WT1	11p13
+HMGA1	12q13-15
+HMGA2	12q13-15
+AHR	1a1
+ARNT	1a1
+MYCL1	1p
+MYCN	1p
+MYCL1	1p32
+TAL1	1p32
+CAMTA1	1p36
+MYCN	1p36
+RUNX3	1p36
+RUNX1	21q22
+RUNX1T1	21q22
+NR5A2	5a
+PAX6	5a
+STAT5B	5a
+RARA	9-cis
+RXRB	9-cis
+ASCL2	a' interact
+ATOH8	a' interact
+GZF1	a's igg-binding
+OVOL1	a's igg-binding
+CUX2	a* state
+TFDP2	a* state
+PCBP3	a*02-dqb1*06
+TAF1B	a*02-dqb1*06
+ATOH8	a*24-cw*03 appear
+GPBP1	a*24-cw*03 appear
+AEBP2	a*30-b*13- drb1*07
+ZHX3	a*30-b*13- drb1*07
+CUX2	a+49g ctla4
+GATAD1	a+49g ctla4
+PHF5A	a+b form
+RORB	a+b form
+FOXJ3	a+b gene
+OVOL1	a+b gene
+SOX12	a+b gene
+PURB	a+g-mobilized pbpcs
+RREB1	a+g-mobilized pbpcs
+NFIX	a+t-rich bacterium
+ZSCAN21	a+t-rich bacterium
+CIAO1	a+t-rich sequence
+SOX12	a+t-rich sequence
+CREB3L2	a- responsive
+SS18L1	a- responsive
+MEIS3	a--from
+ZKSCAN3	a--from
+GZF1	a-1 bind
+TAF7	a-1 bind
+CREB3L2	a-1 frameshift
+FOXA3	a-1 frameshift
+EBF4	a-1027
+HOMEZ	a-1027
+SOX12	a-1027
+BHLHA15	a-16 promoter
+SOX4	a-16 promoter
+AFF3	a-172/trp248 cell
+FOXS1	a-172/trp248 cell
+HOXD3	a-172/trp248 cells
+RREB1	a-172/trp248 cells
+ATF7	a-188 cells
+ELF2	a-188 cells
+ALX1	a-200
+TAF2	a-200
+BACH2	a-20c genotype
+ETV3	a-20c genotype
+SALL2	a-22/-7 gc
+TAF7	a-22/-7 gc
+#TIME:2016-04-09 12:44:38
+GNPTAB	and/
+SURF1	and/
+#TIME:2016-04-11 16:39:18
+GDPD2	-a-1
+SBK2	-a-1
+IGF2	11p15
+MUC5B	11p15
+ADAD1	a* search
+TEKT3	a* search
+CHAC1	a*31-cw*03
+P4HA2	a*31-cw*03
+ARHGAP20	a*3101
+TRA2A	a*3101
+FAM83B	a*68012
+MESP2	a*68012
+LOC420107	a*a*t base
+TRAF3IP3	a*a*t base
+FAM65B	a+f
+FOXI3	a+f
+BHLHB4	a--d
+EVI2B	a--d
+RFX3	a-1291
+TDRD6	a-1291
+P4HA2	a-172 human
+SLC6A20	a-172 human
+CRYBA4	a-192c/g mutate
+EPHA10	a-192c/g mutate
+CDKL2	a-2006/+45
+SYTL5	a-2006/+45
+#TIME:2016-04-19 15:51:13
+MMP1	1g
+MYO1G	1g
+MMP1	1g/2g
+MMP3	1g/2g
+P2RX1	4-disulfonic acid
+P2RX7	4-disulfonic acid
+TRIM14	a surface characterization
+ZC3H12D	a surface characterization
+CD300A	abolish
+EDN3	abolish
+PLCG2	abolish
+ARR3	absence
+BATF	absence
+CD28	absence
+CSTA	absence
+DOCK2	absence
+DOK3	absence
+EBF1	absence
+FKBP6	absence
+FOXI1	absence
+IGJ	absence
+IL2RG	absence
+IL7	absence
+LOC396098	absence
+POU2AF1	absence
+RGS1	absence
+TOX	absence
+#TIME:2016-04-24 13:08:24
+GJB2	235delc
+GJB6	235delc
+CHGB	7b2
+PCSK2	7b2
+KCTD8	a*2420
+RHOBTB3	a*2420
+SPATA17	a*3303-cw*0302-b*5801-drb1*1302-dqb1*0609
+VWC2	a*3303-cw*0302-b*5801-drb1*1302-dqb1*0609
+DSCAML1	a+ infection
+LRRTM4	a+ infection
+MDGA2	a+b-content
+SLC35F3	a+b-content
+SPNS2	a+c1054+1
+SPOCK3	a+c1054+1
+SLC29A4	a- mediate
+ZFHX4	a- mediate
+OXT	a--papp-a
+STAC	a--papp-a
+ESRP1	a-1012g polymorphism
+KCNA10	a-1012g polymorphism
+PPP2R2C	a-105 1
+SPOCK3	a-105 1
+ADAMTS15	a-11
+ADARB2	a-11
+PRRX2	a-161t
+STARD10	a-161t
+DNAI1	a-17
+ELL2	a-17
+ADAMTS15	a-200 bp
+ITM2C	a-200 bp
+RIMS2	a-200 bp
+ZFHX4	a-200 bp
+RLN3	a-chain
+RXFP3	a-chain
+EPHA1	a4
+LTC4S	a4
+#TIME:2016-04-24 13:10:05
+ATP1B4	a''
+CNTNAP5	a''
+DNAI2	a*02-b*46
+OVOL2	a*02-b*46
+DSCAML1	a*0201 e7
+PPAPDC3	a*0201 e7
+CDKL2	a- mediated
+GPR27	a- mediated
+ANO3	a-1438-g 5-htr2a
+SCN2B	a-1438-g 5-htr2a
+CPQ	a-1438a group
+PRTG	a-1438a group
+CLCA2	a-20
+FADS6	a-20
+#TIME:2016-04-28 12:37:28
+LOC395160	a-23187-induced increase
+WDR13	a-23187-induced increase
+#TIME:2016-05-16 11:33:26
+CORIN	a-1438g polymorpyhism
+LRRC10	a-1438g polymorpyhism
+NEBL	a-192c/g mutation
+VAV3	a-192c/g mutation
+#TIME:2016-05-16 11:33:31
+ENDOU	a*0201 reduces
+HMBOX1	a*0201 reduces
+#TIME:2016-05-17 17:29:40
+DDX4	some cell
+GDF9	some cell
+#TIME:2016-06-02 12:24:05
+RIF1	53bp1
+TERF2	53bp1
+MLH1	amsterdam
+MSH6	amsterdam
+#TIME:2016-06-02 20:17:10
+ORC4	putative
+ORC5	putative
+#TIME:2016-06-04 21:50:42
+PSMB2	a*0201 antigen-binding
+SDCCAG8	a*0201 antigen-binding
+SF3A2	u1
+SNRPD1	u1
+AFF2	refer
+SEPN1	refer
+#TIME:2016-06-23 09:59:42
+CYP1A1	1b1
+SLCO1B3	1b1
+#TIME:2016-06-23 09:59:51
+FGA	aalpha
+FGG	aalpha
+#TIME:2016-09-10 16:47:30
+KCNQ1	11p15.5
+SLC22A18	11p15.5
