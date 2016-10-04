@@ -1,0 +1,120 @@
+odz2	anterior/posterior axis specification	process
+recql5	DNA recombination	process
+recql5	DNA repair	process
+odz2	pattern specification process	process
+odz2	cell-cell adhesion	process
+ucp3	translation	process
+recql5	DNA metabolic process	process
+odz2	ectoderm development	process
+odz2	cell adhesion	process
+odz2	biological adhesion	process
+odz2	mesoderm development	process
+odz2	nervous system development	process
+recql5	response to stress	process
+pdia3	response to stress	process
+recql5	catabolic process	process
+tbx22	regulation of transcription from RNA polymerase II promoter	process
+rx2	regulation of transcription from RNA polymerase II promoter	process
+kiaa1274	cellular protein modification process	process
+odz2	intracellular signal transduction	process
+tbx22	transcription from RNA polymerase II promoter	process
+rx2	transcription from RNA polymerase II promoter	process
+odz2	system development	process
+tbx22	transcription, DNA-dependent	process
+rx2	transcription, DNA-dependent	process
+recql5	phosphate-containing compound metabolic process	process
+kiaa1274	phosphate-containing compound metabolic process	process
+ucp3	biosynthetic process	process
+fzd10	regulation of biological process	process
+fzd4	regulation of biological process	process
+tbx22	RNA metabolic process	process
+rx2	RNA metabolic process	process
+fzd10	biological regulation	process
+fzd4	biological regulation	process
+recql5	nitrogen compound metabolic process	process
+odz2	developmental process	process
+ucp3	protein metabolic process	process
+kiaa1274	protein metabolic process	process
+odz2	signal transduction	process
+fzd10	response to stimulus	process
+recql5	response to stimulus	process
+fzd4	response to stimulus	process
+pdia3	response to stimulus	process
+odz2	cell communication	process
+tbx22	nucleobase-containing compound metabolic process	process
+rx2	nucleobase-containing compound metabolic process	process
+recql5	nucleobase-containing compound metabolic process	process
+ucp3	primary metabolic process	process
+tbx22	primary metabolic process	process
+rx2	primary metabolic process	process
+recql5	primary metabolic process	process
+kiaa1274	primary metabolic process	process
+ucp3	metabolic process	process
+tbx22	metabolic process	process
+rx2	metabolic process	process
+recql5	metabolic process	process
+kiaa1274	metabolic process	process
+ucp3	cellular process	process
+recql5	cellular process	process
+kiaa1274	cellular process	process
+odz2	cellular process	process
+pdia3	cellular process	process
+pdia3	protein disulfide isomerase activity	function
+recql5	DNA helicase activity	function
+recql5	helicase activity	function
+kiaa1274	phosphoprotein phosphatase activity	function
+pdia3	isomerase activity	function
+ucp3	structural constituent of ribosome	function
+kiaa1274	phosphatase activity	function
+fzd10	G-protein coupled receptor activity	function
+fzd4	G-protein coupled receptor activity	function
+fzd10	signal transducer activity	function
+fzd4	signal transducer activity	function
+recql5	pyrophosphatase activity	function
+kiaa1274	hydrolase activity, acting on ester bonds	function
+odz2	receptor binding	function
+ucp3	structural molecule activity	function
+tbx22	sequence-specific DNA binding transcription factor activity	function
+rx2	sequence-specific DNA binding transcription factor activity	function
+fzd10	receptor activity	function
+fzd4	receptor activity	function
+odz2	receptor activity	function
+tbx22	DNA binding	function
+rx2	DNA binding	function
+recql5	DNA binding	function
+tbx22	nucleic acid binding	function
+rx2	nucleic acid binding	function
+recql5	nucleic acid binding	function
+recql5	hydrolase activity	function
+kiaa1274	hydrolase activity	function
+fzd10	protein binding	function
+fzd4	protein binding	function
+odz2	protein binding	function
+fzd10	binding	function
+tbx22	binding	function
+rx2	binding	function
+recql5	binding	function
+fzd4	binding	function
+odz2	binding	function
+recql5	catalytic activity	function
+kiaa1274	catalytic activity	function
+pdia3	catalytic activity	function
+recql5	chromosome	cellular_location
+fzd10	integral to membrane	cellular_location
+fzd4	integral to membrane	cellular_location
+fzd10	membrane	cellular_location
+fzd4	membrane	cellular_location
+recql5	cytoplasm	cellular_location
+kiaa1274	cytoplasm	cellular_location
+recql5	organelle	cellular_location
+recql5	intracellular	cellular_location
+kiaa1274	intracellular	cellular_location
+recql5	cell part	cellular_location
+kiaa1274	cell part	cellular_location
+recql5	DNA replication	pathway
+fzd10	Alzheimer disease-presenilin pathway	pathway
+fzd4	Alzheimer disease-presenilin pathway	pathway
+fzd10	Cadherin signaling pathway	pathway
+fzd4	Cadherin signaling pathway	pathway
+fzd10	Wnt signaling pathway	pathway
+fzd4	Wnt signaling pathway	pathway

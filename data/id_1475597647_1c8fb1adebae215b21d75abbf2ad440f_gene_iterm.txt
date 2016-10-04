@@ -1,0 +1,352 @@
+FZD4	wnt pathway	pathway/signaling
+FZD10	wnt pathway	pathway/signaling
+FZD4	wnt pathway	pathway/signaling
+FZD9	wnt pathway	pathway/signaling
+FZD9	wnt pathway	pathway/signaling
+FZD4	wnt sign	pathway/signaling
+FZD10	wnt sign	pathway/signaling
+FZD4	wnt sign	pathway/signaling
+FZD9	wnt sign	pathway/signaling
+FZD9	wnt sign	pathway/signaling
+FZD4	lrp5	gene/protein
+FZD10	lrp5	gene/protein
+FZD4	lrp5	gene/protein
+MUSK	ocular	medical condition
+RAX	ocular	medical condition
+FZD4	ocular	medical condition
+FZD4	ocular	medical condition
+FZD4	wnt ligand	
+FZD4	wnt ligand	
+FZD10	wnt ligand	
+FZD4	cysteine-rich domain	domain/motif
+FZD10	cysteine-rich domain	domain/motif
+FZD4	cysteine-rich domain	domain/motif
+FZD10	imply	
+TBX22	imply	
+KIAA1274	imply	
+ODZ2	imply	
+FZD9	imply	
+FZD9	imply	
+FZD4	wnts	
+FZD10	wnts	
+FZD4	wnts	
+FZD4	norrie disease	gene/protein
+FZD4	norrie disease	gene/protein
+FZD4	norrin	gene/protein
+FZD4	norrin	gene/protein
+FZD4	evr1	gene/protein
+FZD4	evr1	gene/protein
+FZD10	beta-catenin	
+FZD9	beta-catenin	
+FZD9	beta-catenin	
+FZD4	beta-catenin	
+HK1	oxide phosphoryl	
+TFAM	oxide phosphoryl	
+UCP3	oxide phosphoryl	
+FZD4	vascular growth	
+FZD4	vascular growth	
+FZD4	ndp	gene/protein
+FZD4	ndp	gene/protein
+FZD4	peripheral retina	
+FZD4	peripheral retina	
+FZD4	canonic wnt	
+FZD4	canonic wnt	
+FZD10	canonic wnt	
+FZD4	fevr	
+FZD4	fevr	
+FZD4	retinal vascular	
+FZD4	retinal vascular	
+FZD4	vascular system	
+FZD4	vascular system	
+FZD4	cell polar	
+FZD4	cell polar	
+FZD10	cell polar	
+FZD4	cause familial	
+FZD4	cause familial	
+FZD9	origin	
+FZD9	origin	
+TBX22	origin	
+FZD4	wnt	gene/protein
+FZD10	wnt	gene/protein
+FZD4	wnt	gene/protein
+FZD9	bm	
+FZD9	bm	
+FZD4	incomplete	
+FZD4	incomplete	
+FZD4	vascularization	function/process
+FZD4	vascularization	function/process
+UCP3	respiratory	medical condition
+TFAM	respiratory	medical condition
+MUSK	respiratory	medical condition
+FZD4	cli manifestation	
+FZD4	cli manifestation	
+TBX22	spectrum	medical condition
+FZD4	spectrum	medical condition
+FZD4	spectrum	medical condition
+FZD4	retinopathy	medical condition
+FZD4	retinopathy	medical condition
+FZD4	retin	
+FZD4	retin	
+FZD4	vascular develop	function/process
+FZD4	vascular develop	function/process
+UCP3	respiration	function/process
+TFAM	respiration	function/process
+FZD4	phenotyp	
+RAX	phenotyp	
+FZD4	phenotyp	
+TBX22	phenotyp	
+FZD9	nsclc	medical condition
+FZD9	nsclc	medical condition
+FZD4	blindness	medical condition
+FZD4	blindness	medical condition
+FZD4	sever	
+FZD4	sever	
+RAX	sever	
+MUSK	sever	
+FZD4	novel	
+FZD9	novel	
+FZD9	novel	
+ADRA1B	novel	
+FZD4	novel	
+RAX	novel	
+ODZ2	novel	
+FZD4	nonsense	
+FZD4	nonsense	
+FZD4	secret protein	
+FZD4	secret protein	
+HK1	energy metabolism	function/process
+UCP3	energy metabolism	function/process
+FZD9	chromosome	cellular component
+FZD9	chromosome	cellular component
+FZD4	chromosome	cellular component
+FZD10	chromosome	cellular component
+FZD4	chromosome	cellular component
+FZD4	cysteine-rich	domain/motif
+FZD4	cysteine-rich	domain/motif
+FZD4	heterozygous mutate	function/process
+FZD4	heterozygous mutate	function/process
+FZD4	opt	
+RAX	opt	
+FZD4	vasculature	
+FZD4	vasculature	
+FZD4	compound heterozygous	
+FZD4	compound heterozygous	
+FZD4	genomic dna	
+FZD4	genomic dna	
+TBX22	form	
+ODZ2	form	
+PDIA3	form	
+MUSK	form	
+FZD4	form	
+FZD4	wnt/beta-catenin sign	pathway/signaling
+FZD4	wnt/beta-catenin sign	pathway/signaling
+MUSK	muscle	anatomy
+TFAM	muscle	anatomy
+UCP3	muscle	anatomy
+HK1	muscle	anatomy
+FZD4	missense mutat	
+TBX22	missense mutat	
+FZD4	missense mutat	
+TFAM	peroxisome proliferator-activated	
+UCP3	peroxisome proliferator-activated	
+FZD4	coreceptor	function/process
+FZD4	coreceptor	function/process
+FZD9	interest	gene/protein
+FZD9	interest	gene/protein
+TBX22	facial	medical condition
+MUSK	facial	medical condition
+FZD9	diverse	
+FZD9	diverse	
+HK1	skeletal muscle	anatomy
+TFAM	skeletal muscle	anatomy
+UCP3	skeletal muscle	anatomy
+FZD9	characterize	
+FZD9	characterize	
+FZD10	characterize	
+RAX	characterize	
+FZD4	direct sequence	
+FZD4	direct sequence	
+TBX22	ortholog	
+FZD10	ortholog	
+TBX22	exon	
+FZD4	exon	
+FZD10	exon	
+FZD4	clinic feature	
+FZD4	clinic feature	
+ODZ2	transmembrane protein	gene/protein
+FZD10	transmembrane protein	gene/protein
+RAX	vertebrate	
+TBX22	vertebrate	
+FZD10	vertebrate	
+FZD9	placenta	anatomy
+FZD9	placenta	anatomy
+TFAM	oxid	
+UCP3	oxid	
+HK1	oxid	
+FZD10	neur	
+MUSK	neur	
+FZD4	neur	
+UCP3	glycolysis	function/process
+HK1	glycolysis	function/process
+FZD4	hereditary	medical condition
+FZD4	hereditary	medical condition
+HK1	atp	pharmaceutical
+UCP3	atp	pharmaceutical
+TFAM	atp	pharmaceutical
+HK1	mitochondrium membrane	cellular component
+UCP3	mitochondrium membrane	cellular component
+TFAM	ros	pharmaceutical
+UCP3	ros	pharmaceutical
+HK1	mitochondria	function/process
+TFAM	mitochondria	function/process
+UCP3	mitochondria	function/process
+FZD4	embryo	anatomy
+FZD9	embryo	anatomy
+FZD9	embryo	anatomy
+FZD10	embryo	anatomy
+TBX22	embryo	anatomy
+FZD9	derive	function/process
+FZD9	derive	function/process
+RAX	ventrum	
+FZD10	ventrum	
+FZD4	cns	medical condition
+FZD4	cns	medical condition
+FZD4	novel mutat	
+FZD4	novel mutat	
+FZD9	cell surface	cellular component
+FZD9	cell surface	cellular component
+FZD10	cell surface	cellular component
+FZD4	mild	function/process
+FZD4	mild	function/process
+FZD4	unrelated	
+FZD4	unrelated	
+TBX22	embryogenesis	function/process
+FZD10	embryogenesis	function/process
+UCP3	skeletal	
+TFAM	skeletal	
+FZD10	fetu	
+TBX22	fetu	
+FZD10	mrna	
+TBX22	mrna	
+FZD9	mrna	
+FZD9	mrna	
+UCP3	mrna	
+HK1	mitochondrium	
+UCP3	mitochondrium	
+TFAM	mitochondrium	
+FZD9	revert	
+FZD9	revert	
+ADD3	junction	function/process
+MUSK	junction	function/process
+FZD4	perform	
+TBX22	perform	
+RAX	high conserve	
+FZD4	high conserve	
+HK1	membran	
+UCP3	membran	
+MUSK	membran	
+PDIA3	membran	
+ADD3	membran	
+FZD4	inherit	
+TBX22	inherit	
+FZD9	transform	function/process
+FZD9	transform	function/process
+FZD4	autosomal dominant	
+FZD4	autosomal dominant	
+FZD4	angiogenic	
+FZD4	angiogenic	
+ODZ2	in_situ hybridization	function/process
+TBX22	in_situ hybridization	function/process
+UCP3	insulin	gene/protein
+HK1	insulin	gene/protein
+FZD4	heterozygous	
+FZD4	heterozygous	
+FZD9	tumorigenic	
+FZD9	tumorigenic	
+FZD9	marrow	function/process
+FZD9	marrow	function/process
+FZD10	proliferate	function/process
+FZD9	proliferate	function/process
+FZD9	proliferate	function/process
+FZD4	proliferate	function/process
+TBX22	mrna express	function/process
+UCP3	mrna express	function/process
+FZD4	code	
+FZD4	code	
+FZD4	sign pathway	pathway/signaling
+FZD10	sign pathway	pathway/signaling
+FZD4	sign pathway	pathway/signaling
+FZD9	differentiate	function/process
+FZD9	differentiate	function/process
+FZD10	differentiate	function/process
+RAX	differentiate	function/process
+HK1	transport	function/process
+UCP3	transport	function/process
+ADD3	transport	function/process
+FZD4	vascular	medical condition
+FZD4	vascular	medical condition
+FZD4	peripheral	medical condition
+FZD4	peripheral	medical condition
+FZD9	nucleotide	
+FZD9	nucleotide	
+HK1	metabolic	medical condition
+UCP3	metabolic	medical condition
+FZD9	bone	anatomy
+FZD9	bone	anatomy
+PDIA3	acid	pharmaceutical
+FZD10	acid	pharmaceutical
+UCP3	acid	pharmaceutical
+FZD9	acid	pharmaceutical
+FZD9	acid	pharmaceutical
+HK1	acid	pharmaceutical
+PDIA3	fold	
+FZD4	fold	
+MUSK	synapse	cellular component
+FZD4	kidney	anatomy
+ADD3	kidney	anatomy
+FZD4	impair	function/process
+TFAM	impair	function/process
+TBX22	defect	gene/protein
+FZD4	defect	gene/protein
+FZD4	defect	gene/protein
+FZD4	delete	function/process
+FZD4	delete	function/process
+ODZ2	nerve system	anatomy
+FZD10	nerve system	anatomy
+ODZ2	receptor	function/process
+PDIA3	receptor	function/process
+FZD4	receptor	function/process
+PDIA3	antibody	cellular component
+MUSK	antibody	cellular component
+HK1	metabolism	function/process
+UCP3	metabolism	function/process
+TFAM	rna	function/process
+RECQL5	rna	function/process
+FZD4	ligand	function/process
+FZD4	ligand	function/process
+FZD10	extracellular	domain/motif
+FZD4	extracellular	domain/motif
+FZD4	sequent	
+RAX	sequent	
+ODZ2	sequent	
+FZD9	reveal	
+FZD9	reveal	
+ODZ2	reveal	
+RAX	transcript fact	function/process
+TFAM	transcript fact	function/process
+TFAM	nuclear	gene/protein
+PDIA3	nuclear	gene/protein
+ADD3	kinase	function/process
+PDIA3	kinase	function/process
+ODZ2	transcript	function/process
+RECQL5	transcript	function/process
+TBX22	transcript	function/process
+ADD3	phosphoryl	
+HK1	phosphoryl	
+PDIA3	catalyze	function/process
+HK1	catalyze	function/process
+PDIA3	synthesis	function/process
+FZD4	sign	pathway/signaling
+ODZ2	sign	pathway/signaling
+UCP3	tissue	anatomy
+ODZ2	tissue	anatomy

@@ -1,0 +1,199 @@
+FZD10	acid
+FZD10	imply
+FZD10	mrna
+FZD10	chromosome
+FZD10	embryo
+FZD10	exon
+FZD10	vertebrate
+FZD10	wnt pathway
+FZD10	wnt sign
+FZD10	beta-catenin
+FZD10	canonic wnt
+FZD10	cell polar
+FZD10	cell surface
+FZD10	characterize
+FZD10	chick
+FZD10	cysteine-rich domain
+FZD10	differentiate
+FZD10	embryogenesis
+FZD10	fetu
+FZD10	lrp5
+FZD10	nerve system
+FZD10	neur
+FZD10	organ
+FZD10	ortholog
+FZD10	proliferate
+FZD10	sign pathway
+FZD10	transmembrane protein
+FZD10	wnt
+FZD10	wnt ligand
+FZD10	wnts
+FZD4	novel
+FZD4	chromosome
+FZD4	exon
+FZD4	receptor
+FZD4	wnt pathway
+FZD4	wnt sign
+FZD4	canonic wnt
+FZD4	cell polar
+FZD4	cysteine-rich domain
+FZD4	defect
+FZD4	fold
+FZD4	impair
+FZD4	inherit
+FZD4	lrp5
+FZD4	missense mutat
+FZD4	ocular
+FZD4	perform
+FZD4	phenotyp
+FZD4	retin
+FZD4	sequent
+FZD4	sever
+FZD4	sign pathway
+FZD4	spectrum
+FZD4	wnt
+FZD4	wnt ligand
+FZD4	wnts
+UCP3	acid
+UCP3	membran
+UCP3	mrna
+UCP3	muscle
+UCP3	atp
+UCP3	mitochondria
+UCP3	mitochondrium
+UCP3	oxid
+UCP3	oxide phosphoryl
+UCP3	respiratory
+UCP3	skeletal muscle
+UCP3	transport
+UCP3	energy metabolism
+UCP3	glycolysis
+UCP3	insulin
+UCP3	metabolic
+UCP3	metabolism
+UCP3	mitochondrium membrane
+UCP3	mrna express
+UCP3	peroxisome proliferator-activated
+UCP3	respiration
+UCP3	ros
+UCP3	skeletal
+UCP3	tissue
+TBX22	imply
+TBX22	mrna
+TBX22	form
+TBX22	embryo
+TBX22	exon
+TBX22	transcript
+TBX22	vertebrate
+TBX22	defect
+TBX22	embryogenesis
+TBX22	facial
+TBX22	fetu
+TBX22	in_situ hybridization
+TBX22	inherit
+TBX22	missense mutat
+TBX22	mrna express
+TBX22	origin
+TBX22	ortholog
+TBX22	perform
+TBX22	phenotyp
+TBX22	spectrum
+HK1	acid
+HK1	membran
+HK1	muscle
+HK1	atp
+HK1	mitochondria
+HK1	mitochondrium
+HK1	oxid
+HK1	oxide phosphoryl
+HK1	skeletal muscle
+HK1	transport
+HK1	catalyze
+HK1	constant
+HK1	energy metabolism
+HK1	glycolysis
+HK1	insulin
+HK1	metabolic
+HK1	metabolism
+HK1	mitochondrium membrane
+HK1	phosphoryl
+FZD9	acid
+FZD9	imply
+FZD9	mrna
+FZD9	novel
+FZD9	chromosome
+FZD9	embryo
+FZD9	wnt pathway
+FZD9	wnt sign
+FZD9	beta-catenin
+FZD9	cell surface
+FZD9	characterize
+FZD9	differentiate
+FZD9	origin
+FZD9	proliferate
+FZD9	reveal
+TFAM	muscle
+TFAM	atp
+TFAM	mitochondria
+TFAM	mitochondrium
+TFAM	oxid
+TFAM	oxide phosphoryl
+TFAM	respiratory
+TFAM	skeletal muscle
+TFAM	impair
+TFAM	nuclear
+TFAM	peroxisome proliferator-activated
+TFAM	respiration
+TFAM	rna
+TFAM	ros
+TFAM	skeletal
+PDIA3	acid
+PDIA3	membran
+PDIA3	form
+PDIA3	receptor
+PDIA3	antibody
+PDIA3	catalyze
+PDIA3	cycl
+PDIA3	fold
+PDIA3	kinase
+PDIA3	nuclear
+PDIA3	synthesis
+ODZ2	imply
+ODZ2	form
+ODZ2	novel
+ODZ2	receptor
+ODZ2	transcript
+ODZ2	in_situ hybridization
+ODZ2	nerve system
+ODZ2	reveal
+ODZ2	sequent
+ODZ2	tissue
+ODZ2	transmembrane protein
+MUSK	membran
+MUSK	form
+MUSK	muscle
+MUSK	respiratory
+MUSK	antibody
+MUSK	facial
+MUSK	junction
+MUSK	neur
+MUSK	ocular
+MUSK	sever
+MUSK	synapse
+AANAT	mrna
+AANAT	vertebrate
+AANAT	chick
+AANAT	constant
+AANAT	cycl
+AANAT	organ
+AANAT	retin
+AANAT	synthesis
+ADD3	membran
+ADD3	transport
+ADD3	junction
+ADD3	kinase
+ADD3	phosphoryl
+RECQL5	transcript
+RECQL5	rna
+KIAA1274	imply
+ADRA1B	novel

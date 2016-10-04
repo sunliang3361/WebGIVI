@@ -51,8 +51,15 @@ display_header();
         else if($type=='genesymbol'){
             $im_list=explode('\n', $list);
             $input_string='';
-            foreach ($im_list as $item){ $input_string.=$item." "; }          
-            $list = `python GeneName2Entrez.py "$input_string" `;
+            foreach ($im_list as $item){ $input_string.=$item.","; }  
+            $username="liang"; 
+            $password="EntrezForLiang";
+            //echo $input_string;
+            //echo "http://biotm.cis.udel.edu/udelafc/getEntrezFromGene.php?user=$username&pass=$password&symbols=$input_string";
+            $list = file_get_contents("https://biotm.cis.udel.edu/udelafc/getEntrezFromGene.php?user=$username&pass=$password&symbols=$input_string"); 
+            //echo $list;
+            //$list = `python GeneName2Entrez.py "$input_string" `;
+            //echo $list;
         }
      // }
 
@@ -126,6 +133,7 @@ display_header();
             //This is password for you.
             $password="AnalysisForLiang";
             //$gene="650,651,652";
+
             $result = file_get_contents("https://biotm.cis.udel.edu/udelafc/getGeneAnalysisResults.php?user=$username&pass=$password&entrezids=$gene");
 
             $fh=fopen($filename,'w') or die ("cannot open this file");
