@@ -15,19 +15,19 @@ if(preg_match("/[A-Za-z0-9\_]+/", $_POST['type']) == TRUE){
 //$pathwayID = $_POST['pathwayID'];
 
 if ($type == 'subset'){
-    $file = 'data/'.md5(uniqid()) . '.txt';
+    $file = '/var/www/data/'.md5(uniqid()) . '.txt';
     file_put_contents($file, $data);
 }
 elseif($type == 'json'){
-    $file = 'data/'.$pathwayID.'_subpathway' . '.js';
+    $file = '/var/www/data/'.$pathwayID.'_subpathway' . '.js';
     file_put_contents($file, $data);
 }
 elseif($type == 'svg'){
-    $file = 'data/'.md5(uniqid()) . '.svg';
+    $file = '/var/www/data/'.md5(uniqid()) . '.svg';
     file_put_contents($file, $data);
 }
 else{
-    $file = 'data/'.md5(uniqid()) . '.png';
+    $file = '/var/www/data/'.md5(uniqid()) . '.png';
     $uri =  substr($data,strpos($data,',')+1);
     // save to file
     file_put_contents($file, base64_decode($uri));

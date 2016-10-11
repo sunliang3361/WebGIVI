@@ -8,7 +8,7 @@ function display_header(){
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
   <link rel="stylesheet" href="css-ui/jquery-ui.css"/>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
   <script>
     $(function() {
       $( "#menu" ).menu();
@@ -29,7 +29,7 @@ function display_header(){
 <body>
 
 <div id="header">
-  <div id="logo">webGIVI<span id="logo-part"><sup> tool</sup> (development version)</span></div>
+  <div id="logo">webGIVI<span id="logo-part"><sup> tool</sup></span></div>
   <div id="logo-text">
     <div id="logo-title">Visualization of Gene and iTerm</div>
   </div>
@@ -60,6 +60,7 @@ function display_footer(){
   function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
+    $data = str_replace('/', '',$data);
     $data = htmlspecialchars($data);
     return $data;
   }

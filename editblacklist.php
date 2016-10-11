@@ -5,7 +5,7 @@ display_header();
 //$fileName = $_GET['fileName'];
 ?>
 
-<script src="js/editBlacklist.js"></script>
+<script src="js/editBlacklist.js?version=11"></script>
 
 
 <br>
@@ -16,8 +16,7 @@ display_header();
 <!-- <button id='save_exit'>Save and Exit</button> &nbsp;&nbsp;&nbsp; -->
 
 <script>
-	var filename="blacklist_terms.txt";
-	loadBlacklist(filename);
+	loadBlacklist();
 </script>
 
 <?php

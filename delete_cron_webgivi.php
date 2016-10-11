@@ -1,5 +1,6 @@
 <?php
-$path='/home/sunliang/public_html/webgivi/data/';
+//$path='/home/sunliang/public_html/webgivi/data/';
+$path='/var/www/data/';
 $number=0;
 if($handle=opendir($path)){
 	

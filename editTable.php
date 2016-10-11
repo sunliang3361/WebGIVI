@@ -5,7 +5,7 @@ display_header();
 //$fileName = $_GET['fileName'];
 ?>
 
-<script src="js/editTable.js?version=2"></script>
+<script src="js/editTable.js?version=19"></script>
 
 <?php
       $type=$_SESSION["type"];
@@ -68,14 +68,14 @@ display_header();
         $date=new DateTime();
         $d=$date->getTimestamp();
         $ran=md5(uniqid());
-        $filename="data/id_$d"."_$ran.txt";
+        $filename="/var/www/data/id_$d"."_$ran.txt";
         //if we find filename is the same, try to assign a new file name untile it's different.
         while(file_exists($filename)){
           $ran=md5(uniqid());
-          $filename="data/id_$d"."_$ran.txt";
+          $filename="/var/www/data/id_$d"."_$ran.txt";
         }
         $fileID = "id_$d"."_$ran";
-        $filePass="data/id_$d"."_$ran";
+        $filePass="/var/www/data/id_$d"."_$ran";
         $list=trim($list); 
         //only entrez id provided
         echo "</br><div id='main'>";

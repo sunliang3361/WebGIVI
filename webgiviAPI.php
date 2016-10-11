@@ -13,7 +13,7 @@ function loadTable(fileName, flag_egift, conceptName) {
     var currentData;
     var tooltip;
     var rowLength = 4;
-    var fileName_txt = 'data/'+fileName+'.txt';
+    var fileName_txt = '/var/www/data/'+fileName+'.txt';
     d3.text(fileName_txt, function (geneItems) {
         //var datas = geneItems.split("\r\n");
 
@@ -201,7 +201,7 @@ function loadTable(fileName, flag_egift, conceptName) {
         });
 
         //make sure data is rewrite successfully, and then we can use visualize the data
-        var fileNameDir = 'data/'+fileName+'.txt';
+        var fileNameDir = '/var/www/data/'+fileName+'.txt';
         $("#view").off().click(function () {
             
             window.open(fileNameDir);
@@ -512,14 +512,14 @@ echo "</br></br></br>";
 $date=new DateTime();
 $d=$date->getTimestamp();
 $ran=md5(uniqid());
-$filename="data/id_$d"."_$ran.txt";
+$filename="/var/www/data/id_$d"."_$ran.txt";
 //if we find filename is the same, try to assign a new file name untile it's different.
 while(file_exists($filename)){
   $ran=md5(uniqid());
-  $filename="data/id_$d"."_$ran.txt";
+  $filename="/var/www/data/id_$d"."_$ran.txt";
 }
 $fileID = "id_$d"."_$ran";
-$filePass="data/id_$d"."_$ran";
+$filePass="/var/www/data/id_$d"."_$ran";
 
 #print out all ID and iterms
 if($type=='entrez'){

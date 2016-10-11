@@ -1,5 +1,29 @@
 
-function loadTable(fileName, flag_egift, conceptName, fisherFile) {   
+function loadTable(fileName, flag_egift, conceptName, fisherFile){   
+
+    // LOADING contents
+    var fileName_url = '/webgivi/edittable_output.php?filename='+fileName+'.txt';    
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET" ,fileName_url, false ); // false for synchronous request
+    xmlHttp.send( null );
+    var filetext = xmlHttp.responseText;
+    
+
+    // LOADING blacklist
+    var blacklist_url = '/webgivi/blacklist_output.php';    
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET" ,blacklist_url, false ); // false for synchronous request
+    xmlHttp.send( null );
+    var blacklisttext = xmlHttp.responseText;    
+
+
+    // LOADING fisherfile contents       
+    var fisherfile_url = '/webgivi/fishertest_output.php?filename='+fisherFile;    
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET" ,fisherfile_url, false ); // false for synchronous request
+    xmlHttp.send( null );
+    var fisherfiletext = xmlHttp.responseText;
+
 
     //document.getElementById('pvalue').value=fisher;
     //console.log(fisher);
@@ -8,17 +32,19 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile) {
     var originalData;
     var tooltip;
     var rowLength = 4;
-    var fileName_txt = 'data/'+fileName+'.txt';
+    var fileName_txt = '/data/'+fileName+'.txt';
     var blacklistfile = 'blacklist';
-    var blacklistfile_txt = 'blacklist/'+blacklistfile+'_terms.txt';
+    var blacklistfile_txt = '/blacklist/'+blacklistfile+'_terms.txt';
     var blacklistDict = {};
     var currentblacklistData = [];
     var item2categoryDict = {};
     var item2pvalueDict = {};
 
+    
+
     // listing all blacklist terms in blacklistDict{}
-    d3.text(blacklistfile_txt, function (blackItems){
-        var lines = blackItems.split("\n");
+    d3.text(blacklisttext, function (blackItems){
+        var lines = blacklisttext.split("\n");
         var skipline = "#TIME:";
         for (var i = 0; i < lines.length; ++i) {
             if (!(lines[i].substring(0, skipline.length) === skipline) && lines[i].trim()){
@@ -29,8 +55,8 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile) {
 
 
     // listing p-values from fisher test in item2pvalueDict{}
-    d3.text(fisherFile, function (pvalues){
-        var lines = pvalues.split("\n");        
+    d3.text(fisherfiletext, function (pvalues){
+        var lines = fisherfiletext.split("\n");        
         for (var i = 0; i < lines.length; ++i) {
             if (lines[i].trim()){
                 var pairs = lines[i].split("\t");
@@ -42,17 +68,20 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile) {
 
 
     // loading the data into currentData
-    d3.text(fileName_txt, function (geneItems) {
+    //d3.text(filetext, function (geneItems) {
+    d3.text(filetext, function (dummy) {
         //var datas = geneItems.split("\r\n");
-
-        geneItems = geneItems.replace(/\r\n/g, '\n');
+        geneItems = filetext.replace(/\r\n/g, '\n');
         geneItems = geneItems.replace(/\r/g, '\n');
+        //var geneItems = filetext.split("\n");
+
         //console.log(geneItems);
-        if (geneItems.indexOf('\t') == -1) {
+        if (geneItems.indexOf('\t') == -1) {            
             alert('Warning, your data format is wrong or your input IDs are too many, if not, please contact us!');
             location.href = "index.php";
             return;
         }
+        
         var datas = geneItems.split("\n");
         var geneItemData = {};
         geneItemData.genes = [];
@@ -501,16 +530,16 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile) {
         });
 
         $("#reset").off().click(function () {            
-            window.location.reload();s            
+            window.location.reload();           
         });
 
                 
 
         //make sure data is rewrite successfully, and then we can use visualize the data
-        var fileNameDir = 'data/'+fileName+'.txt';
-        $("#view").off().click(function () {
-            
-            window.open(fileNameDir);
+        var fileNameDir = '/var/www/data/'+fileName+'.txt';
+        $("#view").off().click(function () {   
+            window.open('view.php?fileName=' + fileName, '_blank');
+            //window.open(fileNameDir);
         });
         $("#cytoscape").off().click(function () {
             window.open('cytoscape.php?fileName=' + fileName, '_blank');

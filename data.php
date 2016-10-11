@@ -2,7 +2,7 @@
 //try to get node and edge information
 require_once('display_fns.php');
 if(preg_match("/[A-Za-z0-9\_]+/", $_GET['fileName']) == TRUE){
-    $fileName = 'data/'.test_input($_GET['fileName']).'.txt';
+    $fileName = '/var/www/data/'.test_input($_GET['fileName']).'.txt';
 }else{
     exit();
 }

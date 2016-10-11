@@ -111,7 +111,7 @@
     //$jsonData = file_get_contents($jsonFile);
     require_once('display_fns.php');
     if(preg_match("/[A-Za-z0-9\_]+/", $_GET['fileName']) == TRUE){
-      $outfile = 'data/'.test_input($_GET['fileName']).'.txt';
+      $outfile = '/var/www/data/'.test_input($_GET['fileName']).'.txt';
     }else{
       exit();
     }
