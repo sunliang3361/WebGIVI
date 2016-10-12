@@ -5,7 +5,7 @@ display_header();
 //$fileName = $_GET['fileName'];
 ?>
 
-<script src="js/editTable.js?version=19"></script>
+<script src="js/editTable.js?version=28"></script>
 
 <?php
       $type=$_SESSION["type"];
@@ -93,7 +93,7 @@ display_header();
         echo "Selection: <button id='clear'>Clear</button>&nbsp; <button id='selectall'>Select all</button>&nbsp; <button id='toggle'>Toggle</button>&nbsp;&nbsp;";       
         echo "</br></br>";
         echo "<!-- <button id='delete'>Delete</button> &nbsp; -->";        
-        echo "Remove options: <select id='showTable'> <option value='none' selected>&lt;select one&gt;</option> <option value='remove'>Remove selected</option> <!-- <option value='blacklist'>Remove selected and blacklist</option> --> </select> &nbsp;";        
+        echo "Remove options: <select id='showTable'> <option value='none' selected>&lt;select one&gt;</option> <option value='remove'>Remove selected</option> <option value='blacklist'>Remove selected and blacklist</option> </select> &nbsp;";        
         echo "Include blacklisted items:<input type='checkbox' id='blacklistfilter' value='black' checked> &nbsp;";
         echo "<button id='reset'>Reset table</button> &nbsp;";
         echo "<button id='view'>View</button> &nbsp;";

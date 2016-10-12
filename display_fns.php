@@ -3,7 +3,7 @@ function display_header(){
   ?>
 <html>
 <head>
-  <title>webGIVI tool - dev version</title>
+  <title>webGIVI tool</title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>

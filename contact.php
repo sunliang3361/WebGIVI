@@ -26,12 +26,12 @@ if(isset($_POST['userSubmit'])){
       $userEmail = test_input($_POST['userEmail']);
       if (!empty($userEmail)){
          $headers = 'From:'.$userEmail."\r\n".'Reply-To:'.$userEmail."\r\n".'X-Mailer: PHP/' . phpversion();
-         //mail($to_email, $subject, $message,$headers);
+         mail($to_email, $subject, $message,$headers);
       }
 
       else{
         $to_email = $to_email; // dummy line because the next line is commented out. -- ASHIQUE
-        //mail($to_email, $subject, $message);
+        mail($to_email, $subject, $message);
         }
      echo "<p><b>Thanks for your question, we will contact you as soon as possible!</b></p>"; 
   }

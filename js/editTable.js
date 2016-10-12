@@ -23,6 +23,7 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile){
     xmlHttp.open( "GET" ,fisherfile_url, false ); // false for synchronous request
     xmlHttp.send( null );
     var fisherfiletext = xmlHttp.responseText;
+    //alert(fisherfiletext);
 
 
     //document.getElementById('pvalue').value=fisher;
@@ -60,11 +61,11 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile){
         for (var i = 0; i < lines.length; ++i) {
             if (lines[i].trim()){
                 var pairs = lines[i].split("\t");
-                item2pvalueDict[pairs[0]]=pairs[1];                          
+                item2pvalueDict[pairs[0]]=pairs[1];                                        
             }
         }        
     });
-
+    //console.log(item2pvalueDict);
 
 
     // loading the data into currentData
@@ -293,7 +294,7 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile){
 
                     for (var i = 0; i < currentdata.genes.length; i++) {
                         if (currentdata.genes[i] !== "") {
-                            alert(currentdata.keys);                       
+                            //alert(currentdata.keys);                       
                             blacklistTerms.push(currentdata.keys);
                         }
                     }  
@@ -812,6 +813,7 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile){
             //sData.data[2][sData.keys[1].indexOf(item)][sData.keys[2].indexOf(category)] = 1; // The relationship from right to left
         }
 
+        //console.log(item2pvalueDict);
         for (var i = 0; i < sData.keys[1].length; ++i) {
             var obj = {};
             obj.data = sData.data[1][i];
@@ -833,7 +835,15 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile){
             }
 
             // p-values from fisher test
+            //for (var key in item2pvalueDict) {
+            //    console.log(key);
+            //    console.log(item2pvalueDict[key]);
+            //}
+            
+
+            //console.log(sData.keys[1][i]);
             if (sData.keys[1][i] in item2pvalueDict){
+                //console.log("yes");
                 //obj.keys = obj.keys + " - "+ item2pvalueDict[sData.keys[1][i]];
                 obj.pvalue = parseFloat(item2pvalueDict[sData.keys[1][i]]);
             }else{
