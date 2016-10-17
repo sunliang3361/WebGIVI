@@ -79,14 +79,15 @@ display_header();
         $list=trim($list); 
         //only entrez id provided
         echo "</br><div id='main'>";
-	echo "<b>Analysis Result:</b></br>";
+        if (trim($conceptName)!=''){ echo "<b>Analysis Name: </b>".$conceptName."</br>"; }
+	      echo "<b>Analysis Result:</b></br>";
         echo "<div>Suggestion: if your filtered data is larger than 1000 lines, please use concept map to visuallize!</div></br>";
         echo '<div id="wait"><!-- loading animation --></div>';
         echo "<div>";
         echo "Sort: <select id='sortTable'><option value='alph'>alphabetical</option><option value='freq'>frequency</option>";
         if($type == 'entrez' ||$type == 'uniprot'|| $type=='ensembl' || $type=='genesymbol'){
           echo "<option value='cat'>categories</option>";
-          echo "<option value='pval'>p-values</option>";
+          echo "<option value='pval' selected>p-values</option>";
         }
         echo "</select> &nbsp;&nbsp;&nbsp;&nbsp;";
         echo "Frequency: <= <input id='input_freq' type='text' size=3 value='0' > <button id='select_freq'>Select</button>&nbsp;&nbsp;&nbsp;&nbsp;";

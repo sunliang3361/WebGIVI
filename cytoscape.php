@@ -18,6 +18,7 @@
   require_once('display_fns.php');
   if(preg_match("/[A-Za-z0-9\_]+/", $_GET['fileName']) == TRUE){
     $fileName = test_input($_GET['fileName']);
+    $conceptName = $_GET['conceptName'];
   }else{
     exit();
   }
@@ -407,7 +408,10 @@
   <li><a href="#">Tool</a></li>
   <li><a href="contact.php" target="_blank">Contact</a></li>
   </ul>
-  
+
+  <?php 
+    if (trim($conceptName)!=''){ echo "<div><p><b> &nbsp;&nbsp;Analysis Name:</b> ".$conceptName."</p></div>"; }
+  ?>
   <div id="dialog" title="Graph Legend">
     <canvas id='myLegend' width="400" height="200">Your browser doesn't support canvas</canvas>
     <script>

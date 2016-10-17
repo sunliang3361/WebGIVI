@@ -129,6 +129,7 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile){
                 .style("z-index", "10");        
 
         refreshTable(currentData);
+        $("#sortTable").trigger("change"); // so that it starts with sorted by p-value
         
     });
 
@@ -543,7 +544,7 @@ function loadTable(fileName, flag_egift, conceptName, fisherFile){
             //window.open(fileNameDir);
         });
         $("#cytoscape").off().click(function () {
-            window.open('cytoscape.php?fileName=' + fileName, '_blank');
+            window.open('cytoscape.php?fileName=' + fileName + '&conceptName=' + conceptName, '_blank');
         });
         $('#conceptMap').off().click(function () {
 
