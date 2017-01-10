@@ -1,23 +1,22 @@
-function loadData(data,flag_egift) {
+function loadData(data, flag_egift) {
 
     outer = data.outer;
     sortOuter(data.outer);
-    function sortOuter(outer){
+    function sortOuter(outer) {
         var swapped;
-        do{
-            swapped=false;
-            for(var i=0; i<outer.length-1; ++i)
-            {
-                if(outer[i].name.length>outer[i+1].name.length)
-                {
+        do {
+            swapped = false;
+            for (var i = 0; i < outer.length - 1; ++i) {
+                if (outer[i].name.length > outer[i + 1].name.length) {
                     var tmp = outer[i];
-                    outer[i]=outer[i+1];
-                    outer[i+1]=tmp;
-                    swapped=true;
+                    outer[i] = outer[i + 1];
+                    outer[i + 1] = tmp;
+                    swapped = true;
                 }
             }
-        }while(swapped)
+        } while (swapped)
     }
+
     var colors = ["#a50026", "#d73027", "#f46d43", "#fdae61", "#fee090", "#ffffbf", "#e0f3f8", "#abd9e9", "#74add1", "#4575b4", "#313695"];
     var color = d3.scale.linear()
         .domain([60, 220])
@@ -32,9 +31,9 @@ function loadData(data,flag_egift) {
     var il = data.inner.length;
     var ol = data.outer.length;
 
-    var diameter=1400;
+    var diameter = 1400;
     var nodeRingLength = 250;
-    diameter = diameter > il * rect_height ? diameter : (il * rect_height+20);
+    diameter = diameter > il * rect_height ? diameter : (il * rect_height + 20);
 
     var inner_y = d3.scale.linear()
         .domain([0, il])
@@ -42,17 +41,14 @@ function loadData(data,flag_egift) {
 
     var outer_x;
 
-    var levels = Math.ceil(ol/nodeRingLength);
+    var levels = Math.ceil(ol / nodeRingLength);
 
     var maxString;
     var maxLength = 0;
-    var maxStrings =[];
-    for(var j=0; j<levels; ++j)
-    {
-        for(var i=Math.floor(data.outer.length/levels*j); i<data.outer.length/levels*(j+1); ++i)
-        {
-            if(data.outer[i].name.length>maxLength)
-            {
+    var maxStrings = [];
+    for (var j = 0; j < levels; ++j) {
+        for (var i = Math.floor(data.outer.length / levels * j); i < data.outer.length / levels * (j + 1); ++i) {
+            if (data.outer[i].name.length > maxLength) {
                 maxLength = data.outer[i].name.length;
                 maxString = data.outer[i].name;
             }
@@ -61,38 +57,37 @@ function loadData(data,flag_egift) {
         maxStrings.push(maxString);
     }
     var ringSpacings = [0];
-    for(var i=0; i<levels; i++)
-    {
-        var ringSpacing = getStringLength(maxStrings[i])+30;      //40chars 239
+    for (var i = 0; i < levels; i++) {
+        var ringSpacing = getStringLength(maxStrings[i]) + 30;      //40chars 239
         ringSpacings.push(ringSpacing);
     }
 //    var ringSpacing = getStringLength(maxString);      //40chars 239
-    function basicDivString(string,label) {
+    function basicDivString(string, label) {
         var tmp = '';
-        tmp += '<div id='+"legend_"+string+' class="widget shadow drag" style="position: absolute; left:0px; top:400px; width: 220px; height: 160px;">';
-        tmp += '<div class="dragheader">'+label;
+        tmp += '<div id=' + "legend_" + string + ' class="widget shadow drag" style="position: absolute; left:0px; top:400px; width: 220px; height: 160px;">';
+        tmp += '<div class="dragheader">' + label;
         tmp += '<span class="close" >X</span>';
         tmp += '</div>';
-        tmp += '<div id='+"divBody_"+string + '>';
+        tmp += '<div id=' + "divBody_" + string + '>';
 
         tmp += '</div>';
         tmp += '</div>';
         return tmp;
     }
-    if(flag_egift){
+
+    if (flag_egift) {
         addInnerLegend();
 
-        addOuterLegend(); 
+        addOuterLegend();
     }
 
 
     function addInnerLegend() {
-        if($('#legend_inner').length)
-        {
+        if ($('#legend_inner').length) {
             $('#legend_inner').remove();
         }
         var vcdiv = $(basicDivString("inner", "Inner Legend")).css({
-            top:100
+            top: 100
         });
 
         $('body').append(vcdiv);
@@ -103,16 +98,16 @@ function loadData(data,flag_egift) {
         parent.find(".close").css({
             left: 110
         }).click(function () {
-            parent.remove();
-        });
-       var innerSvg = d3.select('#divBody_inner').append('svg').attr("left",0).attr("top",20).attr("width",220).attr("height",160).append('g');
+                parent.remove();
+            });
+        var innerSvg = d3.select('#divBody_inner').append('svg').attr("left", 0).attr("top", 20).attr("width", 220).attr("height", 160).append('g');
         innerSvg.append('rect')
             .attr("x", 10)
             .attr("y", 10)
             .attr('width', 10)
             .attr('height', rect_height)
             .attr('fill', function (d) {
-                 return "#666666";//f46d43
+                return "#666666";//f46d43
             });
         innerSvg.append('rect')
             .attr("x", 20)
@@ -238,8 +233,7 @@ function loadData(data,flag_egift) {
     }
 
     function addOuterLegend() {
-        if($('#legend_outer').length)
-        {
+        if ($('#legend_outer').length) {
             $('#legend_outer').remove();
         }
         var vcdiv = $(basicDivString("outer", "Outer Legend"));
@@ -249,14 +243,14 @@ function loadData(data,flag_egift) {
         $(".drag").draggable();
 
         var parent = $('#legend_outer').css({
-            top:300
+            top: 300
         });
         parent.find(".close").css({
             left: 110
         }).click(function () {
-            parent.remove();
-        });
-        var innerSvg = d3.select('#divBody_outer').append('svg').attr("left",0).attr("top",20).attr("width",220).attr("height",160).append('g');
+                parent.remove();
+            });
+        var innerSvg = d3.select('#divBody_outer').append('svg').attr("left", 0).attr("top", 20).attr("width", 220).attr("height", 160).append('g');
         innerSvg.append('circle')
             .attr("cx", 10)
             .attr("cy", 15)
@@ -270,7 +264,7 @@ function loadData(data,flag_egift) {
             })
             .attr("stroke-width", "2px")
             .attr('fill', function (d) {
-                    return "#ffffff";
+                return "#ffffff";
             });
         innerSvg.append('rect')
             .attr("x", 20)
@@ -428,7 +422,7 @@ function loadData(data,flag_egift) {
             .text("Ratelimit+Down Regulated");
     }
 
-    function getStringLength(string){
+    function getStringLength(string) {
         d3.select('body').append('svg').attr("id", "tmpSVG").append('text').attr("id", "tmpSVGText").text(string);
         var bbox = d3.select('#tmpSVGText').node().getBBox().width;
         d3.select("#tmpSVG").remove();
@@ -437,14 +431,12 @@ function loadData(data,flag_egift) {
 
     var domains = [];
     var ranges = [];
-    for(var i=0; i<ol; i+=ol/(levels*2) )
-    {
+    for (var i = 0; i < ol; i += ol / (levels * 2)) {
         domains.push(i);
-        domains.push(i+ol/(levels*2));
+        domains.push(i + ol / (levels * 2));
     }
 
-    for(var i=0; i<levels; ++i)
-    {
+    for (var i = 0; i < levels; ++i) {
         ranges.push(10);
         ranges.push(170);
         ranges.push(190);
@@ -456,10 +448,9 @@ function loadData(data,flag_egift) {
 // setup positioning
     data.outer = data.outer.map(function (d, i) {
         d.x = outer_x(i);     // by index
-        var space=0;
-        for(var j=0; j<=Math.floor(i/(ol/levels)); j++)
-        {
-            space+=ringSpacings[Math.floor(j)]
+        var space = 0;
+        for (var j = 0; j <= Math.floor(i / (ol / levels)); j++) {
+            space += ringSpacings[Math.floor(j)]
         }
         d.y = diameter / 4 + space;
 
@@ -514,43 +505,43 @@ function loadData(data,flag_egift) {
     function zoomed() {
         zoomContainer.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
     }//Yongnan
-    d3.select("#reset").on("click",function(){
-        d3.select("#svgZoomContainer").attr("transform", "translate(" + 0+","+0 + ")scale(" + 1.0 + ")");
+    d3.select("#reset").on("click", function () {
+        d3.select("#svgZoomContainer").attr("transform", "translate(" + 0 + "," + 0 + ")scale(" + 1.0 + ")");
     });
-    d3.select("#moveLeft").on("click",function(){
+    d3.select("#moveLeft").on("click", function () {
         var transformString = d3.transform($("#svgZoomContainer").attr("transform"));
-        xValue-=5;
-        yValue=0;
-        d3.select("#svgZoomContainer").attr("transform", "translate(" + (transformString.translate[0]+xValue)+","+(transformString.translate[1]+yValue) + ")scale(" + zoomValue + ")");
+        xValue -= 5;
+        yValue = 0;
+        d3.select("#svgZoomContainer").attr("transform", "translate(" + (transformString.translate[0] + xValue) + "," + (transformString.translate[1] + yValue) + ")scale(" + zoomValue + ")");
     });
-    d3.select("#moveRight").on("click",function(){
+    d3.select("#moveRight").on("click", function () {
         var transformString = d3.transform($("#svgZoomContainer").attr("transform"));
-        xValue+=5;
-        yValue=0;
-        d3.select("#svgZoomContainer").attr("transform", "translate(" + (transformString.translate[0]+xValue)+","+(transformString.translate[1]+yValue) + ")scale(" + zoomValue + ")");
+        xValue += 5;
+        yValue = 0;
+        d3.select("#svgZoomContainer").attr("transform", "translate(" + (transformString.translate[0] + xValue) + "," + (transformString.translate[1] + yValue) + ")scale(" + zoomValue + ")");
     });
-    d3.select("#moveUp").on("click",function(){
+    d3.select("#moveUp").on("click", function () {
         var transformString = d3.transform($("#svgZoomContainer").attr("transform"));
-        yValue-=5;
-        xValue=0;
-        d3.select("#svgZoomContainer").attr("transform", "translate(" + (transformString.translate[0]+xValue)+","+(transformString.translate[1]+yValue) + ")scale(" + zoomValue + ")");
+        yValue -= 5;
+        xValue = 0;
+        d3.select("#svgZoomContainer").attr("transform", "translate(" + (transformString.translate[0] + xValue) + "," + (transformString.translate[1] + yValue) + ")scale(" + zoomValue + ")");
     });
-    d3.select("#moveDown").on("click",function(){
+    d3.select("#moveDown").on("click", function () {
         var transformString = d3.transform($("#svgZoomContainer").attr("transform"));
-        yValue+=5;
-        xValue=0;
-        d3.select("#svgZoomContainer").attr("transform", "translate(" + (transformString.translate[0]+xValue)+","+(transformString.translate[1]+yValue) + ")scale(" + zoomValue + ")");
+        yValue += 5;
+        xValue = 0;
+        d3.select("#svgZoomContainer").attr("transform", "translate(" + (transformString.translate[0] + xValue) + "," + (transformString.translate[1] + yValue) + ")scale(" + zoomValue + ")");
     });
 
-    d3.select("#zoomIn").on("click",function(){
-        zoomValue+=0.1;
-        d3.select("#svgZoomContainer").attr("transform", "translate(" + xValue+","+yValue + ")scale(" + zoomValue + ")");
+    d3.select("#zoomIn").on("click", function () {
+        zoomValue += 0.1;
+        d3.select("#svgZoomContainer").attr("transform", "translate(" + xValue + "," + yValue + ")scale(" + zoomValue + ")");
     });
-    d3.select("#zoomOut").on("click",function(){
-        zoomValue-=0.1;
-        yValue=0;
-        xValue=0;
-        d3.select("#svgZoomContainer").attr("transform", "translate(" + xValue+","+yValue + ")scale(" + zoomValue + ")");
+    d3.select("#zoomOut").on("click", function () {
+        zoomValue -= 0.1;
+        yValue = 0;
+        xValue = 0;
+        d3.select("#svgZoomContainer").attr("transform", "translate(" + xValue + "," + yValue + ")scale(" + zoomValue + ")");
     });
     // inner nodes
     var maxInnerLinks = d3.max(data.inner, function (d) {
@@ -691,11 +682,11 @@ function loadData(data,flag_egift) {
             return "outRect" + d.id;
         })
         .attr('fill', function (d) {
-            if(d.regulation==undefined)
+            if (d.regulation == undefined)
                 return "#f46d43";
-            else if(d.regulation=="Up")
+            else if (d.regulation == "Up")
                 return "#ffff00";
-            else if(d.regulation=="Down")
+            else if (d.regulation == "Down")
                 return "#00ff00";
         });
 
@@ -779,7 +770,7 @@ function loadData(data,flag_egift) {
         .attr('width', function (d) {       //Yongnan
             if (maxInnerLinks == 0)
                 return 0;
-            return 20+Math.floor(rect_width * d.related_links.length / maxInnerLinks)
+            return 20 + Math.floor(rect_width * d.related_links.length / maxInnerLinks)
         })
         .attr('x', 10)
         .attr('height', rect_height)
@@ -788,11 +779,11 @@ function loadData(data,flag_egift) {
         })
         .attr('fill', function (d) {
 //            return "#f46d43"
-            if(d.regulation==undefined)
+            if (d.regulation == undefined)
                 return "#f46d43";
-            else if(d.regulation=="Up")
+            else if (d.regulation == "Up")
                 return "#ffff00";
-            else if(d.regulation=="Down")
+            else if (d.regulation == "Down")
                 return "#00ff00";
         })
         .attr('pointer-events', 'all');
@@ -802,7 +793,7 @@ function loadData(data,flag_egift) {
             return d.id + '-txt';
         })
         .attr('text-anchor', 'middle')
-        .attr("transform", "translate(" + (rect_width / 2+10) + ", " + rect_height * .75 + ")")
+        .attr("transform", "translate(" + (rect_width / 2 + 10) + ", " + rect_height * .75 + ")")
         .text(function (d) {
             return trimLabel(d.name, 'inner');
         })    //d.name change to two lines or only show the fixed width of string and show all when hover
@@ -855,7 +846,7 @@ function loadData(data,flag_egift) {
                 window.gui_flag = true;
                 window._data = data;
 
-                loadData(subsetObj,flag_egift);
+                loadData(subsetObj, flag_egift);
 
             }
             else {
@@ -863,17 +854,17 @@ function loadData(data,flag_egift) {
             }
 
         };
-        this.loadFile=function () {
+        this.loadFile = function () {
             $('#myInput').click();
         };
-        this.load=function () {
+        this.load = function () {
             var selected_file = $('#myInput').get(0).files[0];
             if (selected_file === undefined /*&& selectValue === null*/) {
                 alert("Please select data file!");
             }
             else if (selected_file !== undefined /*&& selectValue === null*/) {
                 var reader = new FileReader();
-                reader.readAsText(selected_file,"UTF-8");
+                reader.readAsText(selected_file, "UTF-8");
                 reader.onerror = function () {
                 };
                 reader.onprogress = function (event) {
@@ -886,36 +877,30 @@ function loadData(data,flag_egift) {
                         tempdata = tempdata.replace(/\r\n/g, '\n');
                         tempdata = tempdata.replace(/\r/g, '\n');
                         var symbolRegulation = tempdata.split("\n");
-                        if(symbolRegulation[0].indexOf("regulation")==-1||symbolRegulation.length<2)
-                        {
+                        if (symbolRegulation[0].indexOf("regulation") == -1 || symbolRegulation.length < 2) {
                             alert("Gene expression is a tab-delimited format whose first line begins with symbol and regulation.");
                             return;
                         }
                         var symbolRegulations = {};
-                        symbolRegulations.symbols=[];
-                        symbolRegulations.regulations=[];
-                        for(var i=1; i<symbolRegulation.length; ++i)
-                        {
-                            if(symbolRegulation[i]=="")
+                        symbolRegulations.symbols = [];
+                        symbolRegulations.regulations = [];
+                        for (var i = 1; i < symbolRegulation.length; ++i) {
+                            if (symbolRegulation[i] == "")
                                 continue;
                             var tmps = symbolRegulation[i].split("\t");
                             symbolRegulations.symbols.push(tmps[0]);
                             symbolRegulations.regulations.push(tmps[1]);
                         }
-                        for(var i=0; i<data.inner.length; ++i)
-                        {
-                            var  index = symbolRegulations.symbols.indexOf( data.inner[i].name);
-                            if(index>-1)
-                            {
-                                data.inner[i].regulation=symbolRegulations.regulations[index];
+                        for (var i = 0; i < data.inner.length; ++i) {
+                            var index = symbolRegulations.symbols.indexOf(data.inner[i].name);
+                            if (index > -1) {
+                                data.inner[i].regulation = symbolRegulations.regulations[index];
                             }
                         }
-                        for(var i=0; i<data.outer.length; ++i)
-                        {
-                            var  index = symbolRegulations.symbols.indexOf( data.outer[i].name);
-                            if(index>-1)
-                            {
-                                data.outer[i].regulation=symbolRegulations.regulations[index];
+                        for (var i = 0; i < data.outer.length; ++i) {
+                            var index = symbolRegulations.symbols.indexOf(data.outer[i].name);
+                            if (index > -1) {
+                                data.outer[i].regulation = symbolRegulations.regulations[index];
                             }
                         }
                         d3.select("svg").remove();
@@ -923,27 +908,23 @@ function loadData(data,flag_egift) {
                         $(".tooltip").remove();
                         $(".main").remove();
 
-                        loadData(data,flag_egift);
+                        loadData(data, flag_egift);
                     }
                 };
             }
         };
-        this.switchNode = function(){
-            var newData =[];
-            for(var i=0; i<data.outer.length; ++i)
-            {
-                var tmpData=[];
+        this.switchNode = function () {
+            var newData = [];
+            for (var i = 0; i < data.outer.length; ++i) {
+                var tmpData = [];
                 tmpData.push(data.outer[i].name);
-                var tmpdata=[];
-                for(var j=0; j<data.outer[i].related_nodes.length; ++j)
-                {
-                    if(getInnerNameById(data.outer[i].related_nodes[j])!==null)
-                    {
+                var tmpdata = [];
+                for (var j = 0; j < data.outer[i].related_nodes.length; ++j) {
+                    if (getInnerNameById(data.outer[i].related_nodes[j]) !== null) {
                         tmpdata.push(getInnerNameById(data.outer[i].related_nodes[j]).name);
                     }
                 }
-                if(tmpdata.length>0)
-                {
+                if (tmpdata.length > 0) {
                     tmpData.push(tmpdata);
                 }
                 newData.push(tmpData);
@@ -955,18 +936,18 @@ function loadData(data,flag_egift) {
 
             renderNodes(newData);
         };
-        this.innerLegend = function(){
+        this.innerLegend = function () {
 
             addInnerLegend();
         };
-        this.outerLegend = function(){
+        this.outerLegend = function () {
 
             addOuterLegend();
         };
         this.innersmallerLength = "5";
         this.innergreaterLength = "0";
-        var _this=this;
-        this.innerCutoff = function(){
+        var _this = this;
+        this.innerCutoff = function () {
             var smallLength = parseInt(_this.innersmallerLength);
             var greatLength = parseInt(_this.innergreaterLength);
             var cutoffObj = {};
@@ -997,7 +978,7 @@ function loadData(data,flag_egift) {
         };
         this.outersmallerLength = "5";
         this.outergreaterLength = "0";
-        this.outerCutoff = function(){
+        this.outerCutoff = function () {
             //var smallLength = parseInt(_this.outersmallerLength);
             //var greatLength = parseInt(_this.outergreaterLength);
             //var newTempData=[];
@@ -1025,7 +1006,7 @@ function loadData(data,flag_egift) {
                 }
                 d3.select("svg").remove();
                 $(".main").remove();  //remove the old gui
-                loadData(window._data,flag_egift);
+                loadData(window._data, flag_egift);
                 subsetObj = {};
                 subsetObj.inner = [];
                 subsetObj.outer = [];
@@ -1037,24 +1018,23 @@ function loadData(data,flag_egift) {
             };
         }
     };
-    
-    function getInnerNameById(id){
-        for(var i=0; i<data.inner.length; ++i)
-        {
-            if(data.inner[i].id ==id)
-            {
+
+    function getInnerNameById(id) {
+        for (var i = 0; i < data.inner.length; ++i) {
+            if (data.inner[i].id == id) {
                 return data.inner[i];
             }
         }
         return null;
     }
+
     var text = new FizzyText();
     var gui = new dat.GUI();
     gui.add(text, 'switchNode').name('Switch');
-    if(flag_egift){
+    if (flag_egift) {
         var legend = gui.addFolder('Legend');
         legend.add(text, 'innerLegend').name('Show Inner Legend');
-        legend.add(text, 'outerLegend').name('Show Outer Legend'); 
+        legend.add(text, 'outerLegend').name('Show Outer Legend');
     }
 
     var loadFile = gui.addFolder('Load File');
@@ -1378,22 +1358,22 @@ function loadData(data,flag_egift) {
             //console.log(d);
             var menu_pop = '<div>Gene: ' + d.inner.name + '</div>'
                 + '<div> symbol: ' + d.outer.name + '</div>';
-            if(flag_egfit){
-                menu_pop= menu_pop+ '<div>Link To : <a href="http://www.ncbi.nlm.nih.gov/gquery/?term=' + d.inner.name + '+' + d.outer.name + '" target = "_blank"><button>NCBI</button></a></div>'
-                + '<div>Link To : <a href="http://biotm.cis.udel.edu/udelafc/getSentencePage.php?user=liang&pass=SentencesForLiang&redirect=yes&gene=' + d.inner.name + '&term=' + d.outer.name.toLowerCase() + '" target = "_blank"><button>eGIFT</button></a></div>';
-        
+            if (flag_egfit) {
+                menu_pop = menu_pop + '<div>Link To : <a href="http://www.ncbi.nlm.nih.gov/gquery/?term=' + d.inner.name + '+' + d.outer.name + '" target = "_blank"><button>NCBI</button></a></div>'
+                    + '<div>Link To : <a href="http://biotm.cis.udel.edu/udelafc/getSentencePage.php?user=liang&pass=SentencesForLiang&redirect=yes&gene=' + d.inner.name + '&term=' + d.outer.name.toLowerCase() + '" target = "_blank"><button>eGIFT</button></a></div>';
+
             }
-                
+
         }
         else {
             var name = d.name;
             var menu_pop = '<div> Title: ' + name + '</div>';
-            if(flag_egift){
-                menu_pop= menu_pop +'<div>Link To : <a href="http://www.ncbi.nlm.nih.gov/gquery/?term=' + name + '" target = "_blank"><button>NCBI</button></a></div>';
-               
+            if (flag_egift) {
+                menu_pop = menu_pop + '<div>Link To : <a href="http://www.ncbi.nlm.nih.gov/gquery/?term=' + name + '" target = "_blank"><button>NCBI</button></a></div>';
+
             }
-            
-                menu_pop= menu_pop + '<div>Node : <button id=' + d.id + '_rm>Remove</button></div>'
+
+            menu_pop = menu_pop + '<div>Node : <button id=' + d.id + '_rm>Remove</button></div>'
                 + '<div>Label Size: <input type="text" id=' + d.id + '_ls size="2"><lable> characters </lable><button id=' + d.id + '_rz>Resize</button></div>';
 
         }
@@ -1438,7 +1418,7 @@ function loadData(data,flag_egift) {
         d3.select("svg").remove();  //remove svg
         //$("#menuID").remove();  //remove div menu
         $(".main").remove();  //remove the old gui
-        loadData(data,flag_egift);
+        loadData(data, flag_egift);
         //tooltip.remove();
     }
 

@@ -1,7 +1,11 @@
 <?php
 //try to get node and edge information
-
-$fileName=$_GET['fileName'];
+require_once('display_fns.php');
+if(preg_match("/[A-Za-z0-9\_]+/", $_GET['fileName']) == TRUE){
+    $fileName = '/var/www/data/'.test_input($_GET['fileName']).'.txt';
+}else{
+    exit();
+}
 #$fileName="usrID/id_1378400413_14_gene_iterm.txt";
 
 $fh=fopen($fileName,'rb') or die ("can not open");

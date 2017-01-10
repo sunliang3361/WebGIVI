@@ -1,12 +1,13 @@
 <?php
-$path='/home/sunliang/public_html/webgivi/usrID/';
+//$path='/home/sunliang/public_html/webgivi/data/';
+$path='/var/www/data/';
 $number=0;
 if($handle=opendir($path)){
 	
 	while(false!==($file=readdir($handle))){
 		$filelastmodified=filemtime($path.$file);
 		if((time()-$filelastmodified)>24*3600){
-			if (preg_match('/\.txt$/i', $file) or preg_match('/\.png$/i', $file) or preg_match('/\.zip$/i', $file) or preg_match('/\.jnlp$/i', $file) or preg_match('/\.json$/i', $file)){
+			if (preg_match('/\.txt$/i', $file) or preg_match('/\.png$/i', $file) or preg_match('/\.svg$/i', $file) or preg_match('/\.json$/i', $file)){
 				unlink($path.$file);
 				$number++;
 			}	

@@ -1,0 +1,247 @@
+/*! jQuery UI - v1.10.3 - 2013-05-03
+* http://jqueryui.com
+* Includes: jquery.ui.core.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.button.css, jquery.ui.datepicker.css, jquery.ui.dialog.css, jquery.ui.menu.css, jquery.ui.progressbar.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.slider.css, jquery.ui.spinner.css, jquery.ui.tabs.css, jquery.ui.tooltip.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Verdana%2CArial%2Csans-serif&fwDefault=normal&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=cccccc&bgTextureHeader=highlight_soft&bgImgOpacityHeader=75&borderColorHeader=aaaaaa&fcHeader=222222&iconColorHeader=222222&bgColorContent=ffffff&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=aaaaaa&fcContent=222222&iconColorContent=222222&bgColorDefault=e6e6e6&bgTextureDefault=glass&bgImgOpacityDefault=75&borderColorDefault=d3d3d3&fcDefault=555555&iconColorDefault=888888&bgColorHover=dadada&bgTextureHover=glass&bgImgOpacityHover=75&borderColorHover=999999&fcHover=212121&iconColorHover=454545&bgColorActive=ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=aaaaaa&fcActive=212121&iconColorActive=454545&bgColorHighlight=fbf9ee&bgTextureHighlight=glass&bgImgOpacityHighlight=55&borderColorHighlight=fcefa1&fcHighlight=363636&iconColorHighlight=2e83ff&bgColorError=fef1ec&bgTextureError=glass&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=aaaaaa&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
+* Copyright 2013 jQuery Foundation and other contributors Licensed MIT */
+
+/* Layout helpers
+----------------------------------*/
+.ui-tabs {
+        border:1;
+        float:right;
+        width:100%;
+        
+}
+.ui-tabs .ui-tabs-panel {
+	padding: 0em 0em;
+}
+.ui-dialog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: .2em;
+	outline: 0;
+        z-index:10;
+}
+/*.ui-autocomplete {
+    max-height: 200px;
+    max-width: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position:absolute;
+    z-index:4000 !important;
+  }
+   html .ui-autocomplete {
+    height: 200px;
+	width: 250px;
+	position:absolute;
+	z-index:4000 !important;
+ }*/
+.ui-menu {
+    background: -webkit-linear-gradient(left, #fff , #2B60DE); /* For Safari */
+    background: -o-linear-gradient(right, #fff, #2B60DE); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #fff, #2B60DE); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #fff , #2B60DE); /* Standard syntax (must be last) */
+    /*width: 200px;*/
+    /*height:25%;*/
+  }
+.ui-menu:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.ui-menu .ui-menu-item {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    text-align:center;
+    width: 150px;
+}
+
+#header {
+    width:100%;
+    height:80px;
+    
+    background: -webkit-linear-gradient(left, #fff , #FFFF00); /* For Safari */
+    background: -o-linear-gradient(right, #fff, #FFFF00); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #fff, #FFFF00); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #2B547E , #FFFF00); /* Standard syntax (must be last) */
+}
+#header #logo {
+    font-family: 'Swanky and Moo Moo', cursive;
+}
+#header #logo {
+    font-size:55px;
+    display:inline-block;
+    color:#ffffff;
+    margin-top:-10px;
+    margin-left:40px;
+}
+#header #logo #logo-part {
+   font-size:30px;
+}
+
+#header #logo-text {
+    float:right;
+    color:black;
+    margin-right:40px;
+    text-align:right;
+    display:inline-block;
+
+    vertical-align:middle;
+}
+
+#header #logo-text #logo-title {
+    font-size:16px;
+    margin-top:15px;
+}
+
+
+#index {
+  width:100%;
+}
+#main {
+ width:100%;
+ top:20px;
+ left:20px;
+ position:relative;
+}
+
+#container{
+  float:left;
+  position:relative;
+  top:20px;
+  left:20px;
+  width:70%;
+}
+#sidePage {
+  float:right;
+  position:relative;
+  margin-top:80px;
+  text-align:center;
+  width: 30%;
+}
+
+#textarea-recap{
+  float:left;
+
+}
+
+
+/*slider*/
+#slider-green .ui-slider-range { 
+  background: #8ae234; 
+}
+#slider-green .ui-slider-handle { 
+  border-color: #8ae234; 
+}
+
+#slider-blue .ui-slider-range { 
+  background: #729fcf; 
+}
+#slider-blue .ui-slider-handle { 
+  border-color: #729fcf; 
+}
+
+#dialog{
+  font-size:80%;
+  display:none;
+}
+
+#dialog-layout{
+  font-size:80%;
+  display:none;
+}
+#dialog-tool{
+  font-size:80%;
+  display:none;
+}
+#dialog-rightClick{
+  font-size:75%;
+  display:none;
+}
+
+#dialog-edgeClick{
+  font-size:75%;
+  display:none;
+}
+
+#target{
+  text-align: left;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif ;
+  font-size: 15px;
+}
+
+#cy {
+  height: 94%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 6%;
+  z-index:0;
+}
+
+#wait {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('../images/spinner.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+
+
+/*css for filter table*/
+
+table {
+border-collapse: collapse;
+font: 10px sans-serif;
+}
+th {
+background-color:#eee;
+color:#666666;
+font-weight: bold;
+cursor: default;
+/*text-align: center;*/
+font: 16px sans-serif;
+/*min-width: 43px;*/
+cursor: s-resize;
+}
+tbody tr:first-child td {
+padding-top: 2px;
+}
+tbody td {
+padding: 0;
+border: solid 1px #000;
+font: 14px sans-serif;
+text-align: center;
+}
+tbody rect {
+fill: steelblue;
+}
+tbody td:hover rect {
+fill: brown;
+}
+.Bcell {
+text-align: left;
+left:0;
+top:15
+}
+.highlight{
+background-color: yellow;
+}
+
+

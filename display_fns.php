@@ -8,10 +8,11 @@ function display_header(){
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
   <link rel="stylesheet" href="css-ui/jquery-ui.css"/>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
   <script>
     $(function() {
       $( "#menu" ).menu();
+      $( "#tabs" ).tabs();
       //    $body = $("body");
       //
       //$(document).on({
@@ -20,6 +21,7 @@ function display_header(){
       //});
   });  
   </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   
   
@@ -36,7 +38,7 @@ function display_header(){
 <div id="menu">
   <div><a href="index.php">Home</a></div>
   <div><a href="http://biotm.cis.udel.edu/eGIFT/">eGIFT</a></div>
-  <div><a href="webGIVI_Tutorial.pdf" target='_blank'>Tutorial</a></div>
+  <div><a href="tutorial.php">Tutorial</a></div>
   <div><a href="contact.php">Contact</a></div>
 </div>
 
@@ -53,6 +55,15 @@ function display_footer(){
 <?php
 }
 
+
+  // Sanitize data
+  function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = str_replace('/', '',$data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
 
 ?>
 
