@@ -465,7 +465,7 @@
       <option value="force" selected="selected">Force Directed</option>
       <option value="tree">Tree</option>
       <option value="random">Random</option>
-      <option value="circle">Circle</option>
+      <!-- <option value="circle">Circle</option>  -->
     </select>
     </form>
   </div>

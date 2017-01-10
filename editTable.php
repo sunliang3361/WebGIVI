@@ -94,7 +94,7 @@ display_header();
         echo "Selection: <button id='clear'>Clear</button>&nbsp; <button id='selectall'>Select all</button>&nbsp; <button id='toggle'>Toggle</button>&nbsp;&nbsp;";       
         echo "</br></br>";
         echo "<!-- <button id='delete'>Delete</button> &nbsp; -->";        
-        echo "Remove options: <select id='showTable'> <option value='none' selected>&lt;select one&gt;</option> <option value='remove'>Remove selected</option> <option value='blacklist'>Remove selected and blacklist</option> </select> &nbsp;";        
+        echo "Remove options: <select id='showTable'> <option value='none' selected>&lt;select one&gt;</option> <option value='remove'>Remove selected</option> <!-- <option value='blacklist'>Remove selected and blacklist</option> --> </select> &nbsp;";        
         echo "Include blacklisted items:<input type='checkbox' id='blacklistfilter' value='black' checked> &nbsp;";
         echo "<button id='reset'>Reset table</button> &nbsp;";
         echo "<button id='view'>View</button> &nbsp;";
@@ -104,7 +104,7 @@ display_header();
         if($type == 'entrez'||$type == 'gene-iterm'||$type == 'uniprot'|| $type=='ensembl' || $type=='genesymbol' || $type=='custome'){
             echo "<button id='cytoscape'>Cytoscape View</button> &nbsp;";
         }
-        echo "&nbsp;&nbsp;&nbsp;<button id='editblacklist'>Edit blacklist</button>&nbsp;";
+        // echo "&nbsp;&nbsp;&nbsp;<button id='editblacklist'>Edit blacklist</button>&nbsp;";
         echo "</br></br>";
         echo '<div style="height: 700px; width: 1250px; overflow: scroll;">';
 
